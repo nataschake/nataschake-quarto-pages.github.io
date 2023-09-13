@@ -419,17 +419,17 @@ To mention relevant parties in this section, use markdown table and adjust width
 
 | | | |
 |-|-|-|-|
-| ![](../img/accord.png){width=200px} | ![](../img/bsdd.png){width=200px} | ![](../img/graphdb.png){width=200px} | ![](../img/ontotext-platform.png){width=200px} |
+| ![](img/accord.png){width=200px} | ![](img/bsdd.png){width=200px} | ![](img/graphdb.png){width=200px} | ![](img/ontotext-platform.png){width=200px} |
 
 ### Alternative 2
 
 | | | | 
 |-|-|-|
-| Developed by   | ![](../img/ontotext.png){width=200px} | [Ontotext AD](https://ontotext.com/) |                                                                 |
-| Funded by      | ![](../img/accord.png){width=200px}   | Horizon Europe [Project ACCORD](https://accordproject.eu/)(101056973) |
-| Powered by     | ![](../img/graphdb.png){width=200px}  | [Ontotext GraphDB](https://graphdb.ontotext.com/) |
-|                | ![](../img/ontotext-platform.png){width=200px} | [Ontotext Platform Semantic Objects](https://platform.ontotext.com/semantic-objects/) |       
-| Data from      | ![](../img/bsdd.png){width=200px} | [buildingSMART Data Dictionary](https://www.buildingsmart.org/users/services/buildingsmart-data-dictionary/) |
+| Developed by   | ![](img/ontotext.png){width=200px} | [Ontotext AD](https://ontotext.com/) |                                                                 |
+| Funded by      | ![](img/accord.png){width=200px}   | Horizon Europe [Project ACCORD](https://accordproject.eu/)(101056973) |
+| Powered by     | ![](img/graphdb.png){width=200px}  | [Ontotext GraphDB](https://graphdb.ontotext.com/) |
+|                | ![](img/ontotext-platform.png){width=200px} | [Ontotext Platform Semantic Objects](https://platform.ontotext.com/semantic-objects/) |       
+| Data from      | ![](img/bsdd.png){width=200px} | [buildingSMART Data Dictionary](https://www.buildingsmart.org/users/services/buildingsmart-data-dictionary/) |
 
 :::
 :::footer
