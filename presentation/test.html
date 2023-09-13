@@ -1,0 +1,112 @@
+<html>
+
+<head>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
+    <link rel="stylesheet" href="../../css/onto-hljs.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <!-- and it's easy to individually load additional languages -->
+    <!-- they'd simply add your language modules -->
+    <script src="../../css/ttl.js"></script>
+    <script src="../../css/sparql.js"></script>
+    <script src="../../css/pie.js"></script>
+    <script>hljs.registerLanguage('ttl', ttl_highlight);
+        hljs.registerLanguage('sparql', sparql_highlight);
+        hljs.registerLanguage('pie', pie_highlight);
+        hljs.initHighlightingOnLoad();
+        hljs.highlightAll();
+  //console.log(hljs.listLanguages());
+    </script>
+
+</head>
+
+<body>
+
+
+    <pre><code class="language-ttl">
+    gr:Grant       puml:stereotype "(G,lightyellow)" .
+    gr:Researcher  puml:stereotype "(R,lightgreen)" .
+    gr:Funder      puml:stereotype "(F,lightgreen)" .
+    &lt;project/(CORE_PROJECT_NUM)/subProject/(SUBPROJECT_ID)> puml:left &lt;project/(CORE_PROJECT_NUM)/projectYear/(FULL_PROJECT_NUM)>.
+
+    
+    @base &lt;http://example.org/> .
+    @prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+    @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#> .
+    @prefix foaf: &lt;http://xmlns.com/foaf/0.1/> .
+    @prefix rel: &lt;http://www.perceive.net/schemas/relationship/> .
+    
+    &lt;#green-goblin>
+  rel:enemyOf &lt;#spiderman> ;
+  a foaf:Person ;  # in the context of the Marvel universe
+  foaf:name "Green Goblin" .
+    
+    &lt;#spiderman>
+  rel:enemyOf &lt;#green-goblin> ;
+  a foaf:Person ;
+  foaf:name "Spiderman", "Человек-паук"@ru .
+
+    </code></pre>
+    <pre><code class="language-sparql">
+  define input:inference 'http://www.ics.forth.gr/isl/Schema'
+  define input:same-as 'yes'
+  prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+  prefix tloimarine: &lt;http://www.ics.forth.gr/isl/ontology/iMarineTLO/>
+  prefix tloCore: &lt;http://www.ics.forth.gr/isl/ontology/MarineTLO/>
+  SELECT ?waterarea ?area_id ?subarea ?subarea_id ?division ?division_id ?subdivision ?subdivision_id
+  WHERE {
+   ?waterarea rdf:type tloCore:BC15_Water_Area .
+   ?waterarea tloCore:LC1_is_identified_by ?x.
+   ?x tloimarine:assignedCode ?area_id .
+   OPTIONAL {
+   ?waterarea tloCore:LC27_has_section ?subarea .
+   ?subarea tloCore:LC1_is_identified_by ?y.
+   ?y tloimarine:assignedCode ?subarea_id .
+   }
+   OPTIONAL {
+   ?subarea tloCore:LC27_has_section ?division .
+   ?division tloCore:LC1_is_identified_by ?z.
+   ?z tloimarine:assignedCode ?division_id .
+   }
+   OPTIONAL {
+   ?division tloCore:LC27_has_section ?subdivision .
+   ?subdivision tloCore:LC1_is_identified_by ?w.
+   ?w tloimarine:assignedCode ?subdivision_id .
+   }
+  }
+  </code></pre>
+    <pre><code class="language-pie">
+      Prefices
+      {
+     rdf      :  http://www.w3.org/1999/02/22-rdf-syntax-ns#
+     pext     :  http://proton.semanticweb.org/protonext#
+      }
+      
+      Axioms
+      {
+      // RDF axiomatic triples (from RDF Semantics, section 3.1):
+      
+     <rdf:type> <rdf:type> <rdf:Property>
+     <rdf:subject> <rdf:type> <rdf:Property>
+     <rdf:nil> <rdf:type> <rdf:List>
+      
+      // RDFS axiomatic triples (from RDF Semantics, section 4.1):
+      
+      /*[partialRDFS]*/
+     <rdf:type> <rdfs:domain> <rdfs:Resource>
+      /*[partialRDFS]*/
+      
+     <rdf:object> <rdfs:domain> <rdf:Statement>
+      
+      /*[partialRDFS]*/
+     <rdfs:isDefinedBy> <rdfs:domain> <rdfs:Resource>
+     <rdfs:comment> <rdfs:domain> <rdfs:Resource>
+     <rdfs:label> <rdfs:domain> <rdfs:Resource>
+     <rdf:value> <rdfs:domain> <rdfs:Resource>
+      
+      //     <rdf:type> <rdfs:range> <rdfs:Class>
+     <rdfs:domain> <rdfs:range> <rdfs:Class>
+  </code></pre>
+</body>
+
+</html>
