@@ -374,34 +374,47 @@ or
 
 ## Very long lists (25 rows) {.smaller}
 
-Use `{.smaller}` in a slide title markdown or `scrollable: true smaller: true` in _metadata.yml
+Use `{.smaller}` in a slide title markdown 
+<div class="centered-text">## Very long lists (25 rows) {.smaller} </div>
 
-    1. Far far away, 
-    2. behind the word mountains,
-    3. far from the countries Vokalia and Consonantia,
-    4. there live the blind texts
-    5. Separated they live 
-    6. in Bookmarksgrove right at the coast of the Semantics,
-    7. a large language ocean.
-    8. A small river named Duden
-    9. flows by their place 
-    10. and supplies it with the necessary regelialia.
-    11. It is a paradisematic country, 
-    12. in which roasted parts of sentences
-    13. fly into your mouth.
-    14. Even the all-powerful Pointing
-    15. has no control about the blind texts
-    16. it is an almost unorthographic life.
-    17. One day however
-    18. a small line of blind text
-    19. by the name of Lorem Ipsum
-    20. decided to leave for the far World of Grammar.
-    21. The Big Oxmox 
-    22. advised her not to do so, 
-    23. because there were thousands of bad Commas,
-    24. wild Question Marks
-    25. and devious Semikoli
-    26. but the Little Blind Text didn’t listen.
+Or in `_metadata.yml` write
+
+  ```
+  format:
+    reveals:
+      scrollable: true
+      smaller: true
+    ...
+  ```
+1. Far far away, 
+2. behind the word mountains,
+3. far from the countries Vokalia and Consonantia,
+4. there live the blind texts
+5. Separated they live 
+6. in Bookmarksgrove right at the coast of the Semantics,
+7. a large language ocean.
+8. A small river named Duden
+9. flows by their place 
+10. and supplies it with the necessary regelialia.
+11. It is a paradisematic country, 
+12. in which roasted parts of sentences
+13. fly into your mouth.
+14. Even the all-powerful Pointing
+15. has no control about the blind texts
+16. it is an almost unorthographic life.
+17. One day however
+18. a small line of blind text
+19. by the name of Lorem Ipsum
+20. decided to leave for the far World of Grammar.
+21. The Big Oxmox 
+22. advised her not to do so, 
+23. because there were thousands of bad Commas,
+24. wild Question Marks
+25. and devious Semikoli
+26. but the Little Blind Text didn’t listen.
+
+:::footer
+:::
 
 ## [Big picture](https://ontotext.atlassian.net/browse/SOL-48)
 
