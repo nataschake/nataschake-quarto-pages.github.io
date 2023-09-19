@@ -1,1 +1,1 @@
-Sitemap: https://github.com/nataschake/nataschake-quarto-pages.github.io/sitemap.xml
+Sitemap: https://github.com/nataschake/quarto-pages/sitemap.xml
