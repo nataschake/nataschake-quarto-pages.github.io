@@ -2,4 +2,4 @@ project:
   type: website
   output-dir: docs
 metadata-files: 
-  - presentation/_metadata.yml
+  - resources/_metadata.yml

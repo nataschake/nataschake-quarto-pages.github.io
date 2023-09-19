@@ -438,7 +438,7 @@ To mention relevant parties in this section, use markdown table and adjust width
 
 | | | | 
 |-|-|-|
-| Developed by   | ![](img/ontotext.png){width=200px} | [Ontotext AD](https://ontotext.com/) |                                                                 |
+| Developed by   | ![](resources/ontotext.png){width=200px} | [Ontotext AD](https://ontotext.com/) |                                                                 |
 | Funded by      | ![](img/accord.png){width=200px}   | Horizon Europe [Project ACCORD](https://accordproject.eu/)(101056973) |
 | Powered by     | ![](img/graphdb.png){width=200px}  | [Ontotext GraphDB](https://graphdb.ontotext.com/) |
 |                | ![](img/ontotext-platform.png){width=200px} | [Ontotext Platform Semantic Objects](https://platform.ontotext.com/semantic-objects/) |       
