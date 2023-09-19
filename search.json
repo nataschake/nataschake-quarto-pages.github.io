@@ -1,5 +1,12 @@
 [
   {
+    "objectID": "presentation-template.html#tabsets",
+    "href": "presentation-template.html#tabsets",
+    "title": "Title",
+    "section": "2.1 Tabsets",
+    "text": "2.1 Tabsets\nTabset helps keep related info together.\n::: {.panel-tabset}\n2.1.1 Tab 1 label\nText of tab 1\n2.1.2 Tab 2 label\nText of tab 2\n\n\n\nPut footer here"
+  },
+  {
     "objectID": "presentation.html#use-triple-backticks",
     "href": "presentation.html#use-triple-backticks",
     "title": "Great presentations",
@@ -89,12 +96,5 @@
     "title": "Great presentations",
     "section": "7.3 Acknowledgements",
     "text": "7.3 Acknowledgements\nTo mention relevant parties in this section, use markdown table and adjust widths of images.\n\nAlternative 1Alternative 2\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDeveloped by\n\nOntotext AD\n\n\nFunded by\n\nHorizon Europe Project ACCORD(101056973)\n\n\nPowered by\n\nOntotext GraphDB\n\n\n\n\nOntotext Platform Semantic Objects\n\n\nData from\n\nbuildingSMART Data Dictionary\n\n\n\n\n\n\n\n\n\n\n\n\nQuarto Presentations with beautiful slide decks made by RevealJs"
-  },
-  {
-    "objectID": "presentation-template.html#tabsets",
-    "href": "presentation-template.html#tabsets",
-    "title": "Title",
-    "section": "2.1 Tabsets",
-    "text": "2.1 Tabsets\nTabset helps keep related info together.\n::: {.panel-tabset}\n2.1.1 Tab 1 label\nText of tab 1\n2.1.2 Tab 2 label\nText of tab 2\n\n\n\nPut footer here"
   }
 ]
