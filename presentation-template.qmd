@@ -1,0 +1,37 @@
+---
+title: "Title"
+subtitle: "subtitle if any"
+author: "Author1, ..."
+footer: "Put footer here"
+---
+# Level 1 header
+
+text
+
+# Level 2 headers
+
+Code
+
+```sparql
+select *
+where {
+    ?s ff-map:mentionsEntity ?entity.
+    ?entity a dbo:Place
+
+    service <http://factforge.net/repositories/ff-news>
+    { ?entity rdfs:label ?label }
+}
+```
+## Tabsets
+
+Tabset helps keep related info together. 
+
+::: {.panel-tabset}
+
+### Tab 1 label
+
+Text of tab 1
+
+### Tab 2 label
+
+Text of tab 2
