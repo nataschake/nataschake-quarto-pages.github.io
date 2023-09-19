@@ -32,7 +32,7 @@
     "href": "presentation.html#table-styles",
     "title": "Great presentations",
     "section": "5.1 Table styles",
-    "text": "5.1 Table styles\nTables can be markdown-style and quarto-style.\n\nMarkdownQuarto-style\n\n\n| Default | Left | Right | Center |\n|---------|:-----|------:|:------:|\n| 12      | 12   |    12 |   12   |\n| 123     | 123  |   123 |  123   |\n| 1       | 1    |     1 |   1    |\n\nresults in\n\n\n\nDefault\nLeft\nRight\nCenter\n\n\n\n\n12\n12\n12\n12\n\n\n123\n123\n123\n123\n\n\n1\n1\n1\n1\n\n\n\n\n\nSuch code\n::::{.columns}\n::: {.column width=\"30%\"}\n&lt;div class=\"right-centered-text\"&gt;![](./img/ontotext.png)&lt;/div&gt;\n:::\n::: {.column width=\"70%\"}\nMore text goes here...\n:::\n::::\n\nresults in\n\n\n\n\n\n\nMore text goes here…"
+    "text": "5.1 Table styles\nTables can be markdown-style and quarto-style.\n\nMarkdownQuarto-style\n\n\n| Default | Left | Right | Center |\n|---------|:-----|------:|:------:|\n| 12      | 12   |    12 |   12   |\n| 123     | 123  |   123 |  123   |\n| 1       | 1    |     1 |   1    |\n\nresults in\n\n\n\nDefault\nLeft\nRight\nCenter\n\n\n\n\n12\n12\n12\n12\n\n\n123\n123\n123\n123\n\n\n1\n1\n1\n1\n\n\n\n\n\nSuch code\n::::{.columns}\n::: {.column width=\"30%\"}\n&lt;div class=\"right-centered-text\"&gt;![](./resources/ontotext.png)&lt;/div&gt;\n:::\n::: {.column width=\"70%\"}\nMore text goes here...\n:::\n::::\n\nresults in\n\n\n\n\n\n\nMore text goes here…"
   },
   {
     "objectID": "presentation.html#quarto-columns",
@@ -89,5 +89,12 @@
     "title": "Great presentations",
     "section": "7.3 Acknowledgements",
     "text": "7.3 Acknowledgements\nTo mention relevant parties in this section, use markdown table and adjust widths of images.\n\nAlternative 1Alternative 2\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDeveloped by\n\nOntotext AD\n\n\nFunded by\n\nHorizon Europe Project ACCORD(101056973)\n\n\nPowered by\n\nOntotext GraphDB\n\n\n\n\nOntotext Platform Semantic Objects\n\n\nData from\n\nbuildingSMART Data Dictionary\n\n\n\n\n\n\n\n\n\n\n\n\nQuarto Presentations with beautiful slide decks made by RevealJs"
+  },
+  {
+    "objectID": "presentation-template.html#tabsets",
+    "href": "presentation-template.html#tabsets",
+    "title": "Title",
+    "section": "2.1 Tabsets",
+    "text": "2.1 Tabsets\nTabset helps keep related info together.\n::: {.panel-tabset}\n2.1.1 Tab 1 label\nText of tab 1\n2.1.2 Tab 2 label\nText of tab 2\n\n\n\nPut footer here"
   }
 ]

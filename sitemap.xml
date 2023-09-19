@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://github.com/nataschake/quarto-pages/presentation.html</loc>
-    <lastmod>2023-09-19T08:10:27.968Z</lastmod>
+    <loc>https://github.com/nataschake/nataschake-quarto-pages.github.io/presentation.html</loc>
+    <lastmod>2023-09-19T08:39:11.328Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/nataschake/nataschake-quarto-pages.github.io/presentation-template.html</loc>
+    <lastmod>2023-09-19T08:39:11.840Z</lastmod>
   </url>
 </urlset>
