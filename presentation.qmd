@@ -2,6 +2,7 @@
 title: "Great presentations"
 subtitle: "serving dissemination, learning, onboarding purposes at Ontotext"
 author: "Nataliya Keberle, data engineer, SOL team"
+date: 18-Sep-2023
 footer: "Quarto Presentations with beautiful slide decks made by RevealJs"
 ---
 # Outline

@@ -1,7 +1,8 @@
 ---
-title: "Title"
+title: "Template presentation"
 subtitle: "subtitle if any"
-author: "Author1, ..."
+date: 19-Sep-2023
+author: "Author, ..."
 footer: "Put footer here"
 ---
 # Level 1 header

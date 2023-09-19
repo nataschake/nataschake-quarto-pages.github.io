@@ -1,5 +1,14 @@
 project:
   type: website
   output-dir: docs
-metadata-files: 
-  - resources/_metadata.yml
+website:
+  page-footer: "© Copyright Ontotext AD 2023 All rights reserved"
+  back-to-top-navigation: true
+  navbar:
+    background: light
+    logo: resources/ontotext.png
+    logo-href: https://www.ontotext.com 
+    search: true
+  sidebar: 
+    contents: auto
+  

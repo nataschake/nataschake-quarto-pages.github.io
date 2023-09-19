@@ -1,0 +1,20 @@
+---
+title: Presentations at ontotext.com
+#listing: default
+#listing: true
+contents: docs, 
+          20180529-GitLab-MergeRequests,
+        20180601-TimeMachine-ONTO-CH,
+        20180607-Training-OTTrainingImpact,
+        20180613-CLADA-ONTO-CH,
+        20180718-BDG-WP3,
+        20180815-SemTechPoc-webinar,
+        20180911-SemTechPoC-semantics,
+        20180920-Datathon,
+        20180927-SemTechPoC-training,
+        20181031-SemanticTechnologiesAtOnto-UniYork,
+        20181214-BankOfAmerica-LunchAndShare,
+        20190130-SemTechPoC-psa,
+        20190311-LDLifeCycle,
+        20190909-SemTechPoC-CLEOPATRA
+---
