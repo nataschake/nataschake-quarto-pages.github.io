@@ -4,6 +4,8 @@ subtitle: "serving dissemination, learning, onboarding purposes at Ontotext"
 author: "Nataliya Keberle, data engineer, SOL team"
 date: 18-Sep-2023
 footer: "Quarto Presentations with beautiful slide decks made by RevealJs"
+metadata-files:
+  - ../../resources/_metadata.yml
 ---
 # Outline
 
@@ -221,7 +223,7 @@ Such code
 <pre>
 ::::{.columns}
 ::: {.column width="30%"}
-&lt;div class="right-centered-text">![](./resources/ontotext.png)&lt;/div>
+&lt;div class="right-centered-text">![](../../resources/ontotext.png)&lt;/div>
 :::
 ::: {.column width="70%"}
 More text goes here...
@@ -232,7 +234,7 @@ results in
 
 ::::{.columns}
 ::: {.column width="30%"}
-<div class="right-centered-text">![](./resources/ontotext.png)</div>
+<div class="right-centered-text">![](../../resources/ontotext.png)</div>
 :::
 ::: {.column width="70%"}
 More text goes here...
@@ -433,13 +435,13 @@ To mention relevant parties in this section, use markdown table and adjust width
 
 | | | |
 |-|-|-|-|
-| ![](img/accord.png){width=200px} | ![](img/bsdd.png){width=200px} | ![](img/graphdb.png){width=200px} | ![](img/ontotext-platform.png){width=200px} |
+| ![](./img/accord.png){width=200px} | ![](./img/bsdd.png){width=200px} | ![](./img/graphdb.png){width=200px} | ![](./img/ontotext-platform.png){width=200px} |
 
 ### Alternative 2
 
 | | | | 
 |-|-|-|
-| Developed by   | ![](resources/ontotext.png){width=200px} | [Ontotext AD](https://ontotext.com/) |                                                                 |
+| Developed by   | ![](../../resources/ontotext.png){width=200px} | [Ontotext AD](https://ontotext.com/) |                                                                 |
 | Funded by      | ![](img/accord.png){width=200px}   | Horizon Europe [Project ACCORD](https://accordproject.eu/)(101056973) |
 | Powered by     | ![](img/graphdb.png){width=200px}  | [Ontotext GraphDB](https://graphdb.ontotext.com/) |
 |                | ![](img/ontotext-platform.png){width=200px} | [Ontotext Platform Semantic Objects](https://platform.ontotext.com/semantic-objects/) |       
