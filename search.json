@@ -1,98 +1,91 @@
 [
   {
-    "objectID": "presentation-template.html#tabsets",
-    "href": "presentation-template.html#tabsets",
-    "title": "Title",
-    "section": "2.1 Tabsets",
-    "text": "2.1 Tabsets\nTabset helps keep related info together.\n::: {.panel-tabset}\n2.1.1 Tab 1 label\nText of tab 1\n2.1.2 Tab 2 label\nText of tab 2\n\n\n\nPut footer here"
-  },
-  {
-    "objectID": "presentation.html#use-triple-backticks",
-    "href": "presentation.html#use-triple-backticks",
+    "objectID": "markdown/20230919-QuartoPresentationFeatures/presentation.html#use-triple-backticks",
+    "href": "markdown/20230919-QuartoPresentationFeatures/presentation.html#use-triple-backticks",
     "title": "Great presentations",
     "section": "4.1 Use triple backticks",
     "text": "4.1 Use triple backticks\nUse markdown style: ```…``` or ```language…```.\nSPARQL/TTL/PIE code will be in Ontotext-specific highlighting style:\nselect *\nwhere {\n    ?s ff-map:mentionsEntity ?entity.\n    ?entity a dbo:Place\n\n    service &lt;http://factforge.net/repositories/ff-news&gt;\n    { ?entity rdfs:label ?label }\n}\nGeneral purpose programing code blocks are also highlighted:\n# Store input numbers\nnum1 = input('Enter first number: ')\nnum2 = input('Enter second number: ')\n\n# Add two numbers\nsum = float(num1) + float(num2)\n\n# Display the sum\nprint('The sum of {0} and {1} is {2}'.format(num1, num2, sum))"
   },
   {
-    "objectID": "presentation.html#code-in-turtlettl",
-    "href": "presentation.html#code-in-turtlettl",
+    "objectID": "markdown/20230919-QuartoPresentationFeatures/presentation.html#code-in-turtlettl",
+    "href": "markdown/20230919-QuartoPresentationFeatures/presentation.html#code-in-turtlettl",
     "title": "Great presentations",
     "section": "4.2 Code in Turtle/TTL",
     "text": "4.2 Code in Turtle/TTL\ngr:Grant                    puml:stereotype \"(G,lightyellow)\" .\ngr:Researcher               puml:stereotype \"(R,lightgreen)\" .\ngr:Funder                   puml:stereotype \"(F,lightgreen)\" .\n&lt;funder/(ADMINISTERING_IC)&gt; puml:stereotype \"(A,lightgreen)\" .\ngr:Grantee                  puml:stereotype \"(G,lightgreen)\" .\ngr:GranteeDepartment        puml:stereotype \"(D,lightgreen)\" .\ngr:Funding                  puml:stereotype \"($,yellow)\" .\ngr:Address                  puml:stereotype \"(A,lightgreen)\" .\ngr:Project                  puml:stereotype \"(P,violet)\" .\ngr:ProjectYear              puml:stereotype \"(Y,violet)\" .\ngr:SubProject               puml:stereotype \"(S,violet)\" .\nskos:Concept                puml:stereotype \"(C,lightblue)\" .\nskos:ConceptScheme          puml:stereotype \"(S,lightblue)\" .\ngr:project                  puml:arrow puml:up.\ngr:projectYear              puml:arrow puml:up.\ngr:subProject               puml:arrow puml:up.\ngr:activityType             puml:arrow puml:down-4.\ngr:applicationType          puml:arrow puml:down-4.\ngr:fundingMechanism         puml:arrow puml:down-4.\ngr:spendingCategory         puml:arrow puml:down-4.\ngr:studySection             puml:arrow puml:down-4.\nowl:sameAs                  puml:arrow puml:left-dashed-none.\n&lt;project/(CORE_PROJECT_NUM)/subProject/(SUBPROJECT_ID)&gt; puml:left &lt;project/(CORE_PROJECT_NUM)/projectYear/(FULL_PROJECT_NUM)&gt;.\ngr:outcomeClinicalTrial   a puml:InlineProperty.\ngr:outcomePatent          a puml:InlineProperty.\ngr:outcomePublication     a puml:InlineProperty.\nrdfs:seeAlso              a puml:InlineProperty.\n\nand then - some text/list item\n\n\n\nCode blocks can be 25 lines of 110 chars"
   },
   {
-    "objectID": "presentation.html#code-in-sparql",
-    "href": "presentation.html#code-in-sparql",
+    "objectID": "markdown/20230919-QuartoPresentationFeatures/presentation.html#code-in-sparql",
+    "href": "markdown/20230919-QuartoPresentationFeatures/presentation.html#code-in-sparql",
     "title": "Great presentations",
     "section": "4.3 Code in SPARQL",
     "text": "4.3 Code in SPARQL\nprefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;\nprefix tloimarine: &lt;http://www.ics.forth.gr/isl/ontology/iMarineTLO/&gt;\nprefix tloCore: &lt;http://www.ics.forth.gr/isl/ontology/MarineTLO/&gt;\nSELECT ?waterarea ?area_id ?subarea ?subarea_id ?division ?division_id ?subdivision ?subdivision_id ?subarea_id\nWHERE {\n ?waterarea rdf:type tloCore:BC15_Water_Area .\n ?waterarea tloCore:LC1_is_identified_by ?x.\n ?x tloimarine:assignedCode ?area_id .\n  OPTIONAL {\n    ?waterarea tloCore:LC27_has_section ?subarea .\n    ?subarea tloCore:LC1_is_identified_by ?y.\n    ?y tloimarine:assignedCode ?subarea_id .\n  }\n  OPTIONAL {\n    ?subarea tloCore:LC27_has_section ?division .\n    ?division tloCore:LC1_is_identified_by ?z.\n    ?z tloimarine:assignedCode ?division_id .\n  }\n  OPTIONAL {\n    ?division tloCore:LC27_has_section ?subdivision .\n    ?subdivision tloCore:LC1_is_identified_by ?w.\n    ?w tloimarine:assignedCode ?subdivision_id .\n  }\nFILTER (bound(?subarea_id) || bound(?division_id))\nFILTER (bound(?subdivision_id)) \n}\n\nthis code block has 26 lines, so a scrollbar appears at the right side"
   },
   {
-    "objectID": "presentation.html#code-blocks-can-be-with-triple-apostrophes-as-in-lucene-graphdb-connector-example-but",
-    "href": "presentation.html#code-blocks-can-be-with-triple-apostrophes-as-in-lucene-graphdb-connector-example-but",
+    "objectID": "markdown/20230919-QuartoPresentationFeatures/presentation.html#code-blocks-can-be-with-triple-apostrophes-as-in-lucene-graphdb-connector-example-but",
+    "href": "markdown/20230919-QuartoPresentationFeatures/presentation.html#code-blocks-can-be-with-triple-apostrophes-as-in-lucene-graphdb-connector-example-but",
     "title": "Great presentations",
     "section": "4.4 Code blocks can be with triple apostrophes, as in Lucene GraphDB connector example, but",
     "text": "4.4 Code blocks can be with triple apostrophes, as in Lucene GraphDB connector example, but\nDon’t use ``` sparql…```, instead, mark code block with ```…```. Ontotext code highlighter “moves” opening curly bracket to the very bottom.\nPREFIX luc: &lt;http://www.ontotext.com/connectors/lucene#&gt;\nPREFIX luc-index: &lt;http://www.ontotext.com/connectors/lucene/instance#&gt;\n\nINSERT DATA {\n    luc-index:my_index luc:createConnector '''\n    { &lt;---this bracket \n  \"types\": [\n    \"http://www.ontotext.com/example/wine#Wine\"\n  ],\n  \"fields\": [\n    {\n      \"fieldName\": \"grape\",\n      \"propertyChain\": [\n        \"http://www.ontotext.com/example/wine#madeFromGrape\",\n        \"http://www.w3.org/2000/01/rdf-schema#label\"\n      ]\n    },\n    {\n      \"fieldName\": \"sugar\",\n      \"propertyChain\": [\n        \"http://www.ontotext.com/example/wine#hasSugar\"\n      ],\n      \"analyzed\": false,\n      \"multivalued\": false\n    },\n    {\n      \"fieldName\": \"year\",\n      \"propertyChain\": [\n        \"http://www.ontotext.com/example/wine#hasYear\"\n      ],\n      \"analyzed\": false\n    }\n  ]\n}''' .\n}"
   },
   {
-    "objectID": "presentation.html#table-styles",
-    "href": "presentation.html#table-styles",
+    "objectID": "markdown/20230919-QuartoPresentationFeatures/presentation.html#table-styles",
+    "href": "markdown/20230919-QuartoPresentationFeatures/presentation.html#table-styles",
     "title": "Great presentations",
     "section": "5.1 Table styles",
-    "text": "5.1 Table styles\nTables can be markdown-style and quarto-style.\n\nMarkdownQuarto-style\n\n\n| Default | Left | Right | Center |\n|---------|:-----|------:|:------:|\n| 12      | 12   |    12 |   12   |\n| 123     | 123  |   123 |  123   |\n| 1       | 1    |     1 |   1    |\n\nresults in\n\n\n\nDefault\nLeft\nRight\nCenter\n\n\n\n\n12\n12\n12\n12\n\n\n123\n123\n123\n123\n\n\n1\n1\n1\n1\n\n\n\n\n\nSuch code\n::::{.columns}\n::: {.column width=\"30%\"}\n&lt;div class=\"right-centered-text\"&gt;![](./resources/ontotext.png)&lt;/div&gt;\n:::\n::: {.column width=\"70%\"}\nMore text goes here...\n:::\n::::\n\nresults in\n\n\n\n\n\n\nMore text goes here…"
+    "text": "5.1 Table styles\nTables can be markdown-style and quarto-style.\n\nMarkdownQuarto-style\n\n\n| Default | Left | Right | Center |\n|---------|:-----|------:|:------:|\n| 12      | 12   |    12 |   12   |\n| 123     | 123  |   123 |  123   |\n| 1       | 1    |     1 |   1    |\n\nresults in\n\n\n\nDefault\nLeft\nRight\nCenter\n\n\n\n\n12\n12\n12\n12\n\n\n123\n123\n123\n123\n\n\n1\n1\n1\n1\n\n\n\n\n\nSuch code\n::::{.columns}\n::: {.column width=\"30%\"}\n&lt;div class=\"right-centered-text\"&gt;![](../../resources/ontotext.png)&lt;/div&gt;\n:::\n::: {.column width=\"70%\"}\nMore text goes here...\n:::\n::::\n\nresults in\n\n\n\n\n\n\nMore text goes here…"
   },
   {
-    "objectID": "presentation.html#quarto-columns",
-    "href": "presentation.html#quarto-columns",
+    "objectID": "markdown/20230919-QuartoPresentationFeatures/presentation.html#quarto-columns",
+    "href": "markdown/20230919-QuartoPresentationFeatures/presentation.html#quarto-columns",
     "title": "Great presentations",
     "section": "5.2 Quarto columns",
     "text": "5.2 Quarto columns\n\n\n\n\n\n\n\nBy default, text in Quarto is left-oriented, but with custom CSS it is possible to change orientation of text\n\n::::{.columns}\n::: {.column width=\"50%\"}\n&lt;div class=\"centered-text\"&gt;\n![](./img/big-picture.png){width=60%}&lt;/div&gt;\n:::\n::: {.column width=\"50%\"}\n&lt;div class=\"right-centered-text\"&gt;\nBy default, text in Quarto is left-oriented, but with custom CSS it is possible to change orientation of text\n&lt;/div&gt;\nImportant: Ctrl + Left mouse button click enlarges a picture / returns to a regular view."
   },
   {
-    "objectID": "presentation.html#quarto-columns-with-images-inside",
-    "href": "presentation.html#quarto-columns-with-images-inside",
+    "objectID": "markdown/20230919-QuartoPresentationFeatures/presentation.html#quarto-columns-with-images-inside",
+    "href": "markdown/20230919-QuartoPresentationFeatures/presentation.html#quarto-columns-with-images-inside",
     "title": "Great presentations",
     "section": "5.3 Quarto columns with images inside",
     "text": "5.3 Quarto columns with images inside\n\n\n\n\n\n\n\nCurrent solution is: adjust the column widths to see the whole picture without any scale. E.g., these image and text are perfectly seen with column widths 30/70, whereas column widths 50/50 will require adding {width=70%} (or other) to ![](./img/big-picture.png)\n\n::::{.columns}\n::: {.column width=\"30%\"}\n&lt;div class=\"centered-text\"&gt;\n![](./img/big-picture.png)&lt;/div&gt;\n:::\n::: {.column width=\"70%\"}\ntext goes here\n:::\n::::"
   },
   {
-    "objectID": "presentation.html#rendering-large-tables",
-    "href": "presentation.html#rendering-large-tables",
+    "objectID": "markdown/20230919-QuartoPresentationFeatures/presentation.html#rendering-large-tables",
+    "href": "markdown/20230919-QuartoPresentationFeatures/presentation.html#rendering-large-tables",
     "title": "Great presentations",
     "section": "5.4 Rendering large tables",
     "text": "5.4 Rendering large tables\n\nuse {.scrollable .smaller} in a slide title markdown or\nuse scrollable: true smaller: true in _metadata.yml\n\nthe minus is that the header of the table is scrollable as well, so when we see last rows of the table, we don’t see the table header.\n\n\n\n\n\nTable\n\n\n\n\n1\n\n\n2\n\n\n3\n\n\n4\n\n\n5\n\n\n6\n\n\n7\n\n\n8\n\n\n9\n\n\n10\n\n\n11\n\n\n12\n\n\n13\n\n\n14\n\n\n15\n\n\n16\n\n\n17\n\n\n18\n\n\n19\n\n\n20\n\n\n21\n\n\n22\n\n\n23\n\n\n24\n\n\n25\n\n\n26\n\n\n27\n\n\n28"
   },
   {
-    "objectID": "presentation.html#quarto-side-notes-and-footnotes",
-    "href": "presentation.html#quarto-side-notes-and-footnotes",
+    "objectID": "markdown/20230919-QuartoPresentationFeatures/presentation.html#quarto-side-notes-and-footnotes",
+    "href": "markdown/20230919-QuartoPresentationFeatures/presentation.html#quarto-side-notes-and-footnotes",
     "title": "Great presentations",
     "section": "6.1 Quarto side notes and footnotes",
     "text": "6.1 Quarto side notes and footnotes\n\nWhen you have a main text and a side note, e.g. reference to a paper/project/etc., you can use Quarto-specific markdown. Side notes and footnotes do not have any numbering scheme.\n\n::: aside\n[Side note: reference to a paper](http://ebooks.iospress.nl/doi/10.3233/SSW200034)\n:::\n\n\nAlso it is possible to have a footnote in a traditional markdown. Here is a footnote reference,\n[^1]\nand another\n[^longnote]\n\n[^1]: Here is the footnote.\n[^longnote]: Here's one with multiple blocks.\n    Subsequent paragraphs are indented to show that they belong to the previous footnote.\n\n\n\nSide note: reference to a paper"
   },
   {
-    "objectID": "presentation.html#bare-links",
-    "href": "presentation.html#bare-links",
+    "objectID": "markdown/20230919-QuartoPresentationFeatures/presentation.html#bare-links",
+    "href": "markdown/20230919-QuartoPresentationFeatures/presentation.html#bare-links",
     "title": "Great presentations",
     "section": "6.2 Bare links",
     "text": "6.2 Bare links\n\nIn Pandoc:\n\nmd_extension: +autolink_bare_uris\n\nIn Quarto:\n\nbare link is clickable: https://www.wikidata.org/wiki/Q1\nlink in the GitHub Markdown style [text](url) is clickable\nlink surrounded with &lt; &gt; is clickable: https://www.wikidata.org/wiki/Q1"
   },
   {
-    "objectID": "presentation.html#very-long-lists-25-rows",
-    "href": "presentation.html#very-long-lists-25-rows",
+    "objectID": "markdown/20230919-QuartoPresentationFeatures/presentation.html#very-long-lists-25-rows",
+    "href": "markdown/20230919-QuartoPresentationFeatures/presentation.html#very-long-lists-25-rows",
     "title": "Great presentations",
     "section": "7.1 Very long lists (25 rows)",
     "text": "7.1 Very long lists (25 rows)\nUse {.smaller} in a slide title markdown\n\n## Very long lists (25 rows) {.smaller}\n\nOr in _metadata.yml write\nformat:\n  reveals:\n    scrollable: true\n    smaller: true\n  ...\n\nFar far away,\nbehind the word mountains,\nfar from the countries Vokalia and Consonantia,\nthere live the blind texts\nSeparated they live\nin Bookmarksgrove right at the coast of the Semantics,\na large language ocean.\nA small river named Duden\nflows by their place\nand supplies it with the necessary regelialia.\nIt is a paradisematic country,\nin which roasted parts of sentences\nfly into your mouth.\nEven the all-powerful Pointing\nhas no control about the blind texts\nit is an almost unorthographic life.\nOne day however\na small line of blind text\nby the name of Lorem Ipsum\ndecided to leave for the far World of Grammar.\nThe Big Oxmox\nadvised her not to do so,\nbecause there were thousands of bad Commas,\nwild Question Marks\nand devious Semikoli\nbut the Little Blind Text didn’t listen."
   },
   {
-    "objectID": "presentation.html#big-picture",
-    "href": "presentation.html#big-picture",
+    "objectID": "markdown/20230919-QuartoPresentationFeatures/presentation.html#big-picture",
+    "href": "markdown/20230919-QuartoPresentationFeatures/presentation.html#big-picture",
     "title": "Great presentations",
     "section": "7.2 Big picture",
     "text": "7.2 Big picture\n\nThis image is set without ![](img/timeline.png){height=650px}."
   },
   {
-    "objectID": "presentation.html#sec-acknowledgements",
-    "href": "presentation.html#sec-acknowledgements",
+    "objectID": "markdown/20230919-QuartoPresentationFeatures/presentation.html#sec-acknowledgements",
+    "href": "markdown/20230919-QuartoPresentationFeatures/presentation.html#sec-acknowledgements",
     "title": "Great presentations",
     "section": "7.3 Acknowledgements",
     "text": "7.3 Acknowledgements\nTo mention relevant parties in this section, use markdown table and adjust widths of images.\n\nAlternative 1Alternative 2\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDeveloped by\n\nOntotext AD\n\n\nFunded by\n\nHorizon Europe Project ACCORD(101056973)\n\n\nPowered by\n\nOntotext GraphDB\n\n\n\n\nOntotext Platform Semantic Objects\n\n\nData from\n\nbuildingSMART Data Dictionary\n\n\n\n\n\n\n\n\n\n\n\n\nQuarto Presentations with beautiful slide decks made by RevealJs"
