@@ -10,9 +10,8 @@
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.3.450">
 
-  <meta name="author" content="Nataliya Keberle, data engineer, SOL team">
   <meta name="dcterms.date" content="2023-09-18">
-  <title>Great presentations</title>
+  <title>mve - Various features</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -390,14 +389,14 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
   <link rel="stylesheet" href="../../css/onto-hljs.css">
   <!--added for testing trySparql.js-->
-  <script src="../css/trySparql.js"></script>
+  <script src="../../js/trySparql.js"></script>
   <!-- added for highlighting additional languages-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
   <!-- and it's easy to individually load additional languages -->
   <!-- they'd simply add your language modules -->
-  <script src="../../css/ttl.js"></script>
-  <script src="../../css/sparql.js"></script>
-  <script src="../../css/pie.js"></script>
+  <script src="../../js/ttl.js"></script>
+  <script src="../../js/sparql.js"></script>
+  <script src="../../js/pie.js"></script>
   <script>hljs.registerLanguage('ttl', ttl_highlight);
       hljs.registerLanguage('sparql', sparql_highlight);
       hljs.registerLanguage('pie', pie_highlight);
@@ -410,78 +409,23 @@
   <div class="reveal">
     <div class="slides">
 
-<section id="title-slide" data-background-image="../../resources/bkg-blue.jpg" class="quarto-title-block center">
-  <h1 class="title">Great presentations</h1>
-  <p class="subtitle">serving dissemination, learning, onboarding purposes at Ontotext</p>
+<section id="title-slide" data-background-image="../../resources/bkg1.png" class="quarto-title-block center">
+  <h1 class="title">Various features</h1>
 
 <div class="quarto-title-authors">
-<div class="quarto-title-author">
-<div class="quarto-title-author-name">
-Nataliya Keberle, data engineer, SOL team 
-</div>
-</div>
 </div>
 
   <p class="date">2023-09-18</p>
 </section>
-<section id="outline" class="title-slide slide level1 center" data-number="1">
-<h1><span class="header-section-number">1</span> Outline</h1>
-<ul>
-<li>What is Quarto, RevealJs</li>
-<li>Overall process</li>
-<li>Highlighting code samples</li>
-<li>Tables</li>
-<li>Lists</li>
-<li>Links</li>
-<li>Images</li>
-<li>Acknowledgements section</li>
-</ul>
-</section>
-
-<section id="what-is-quarto-and-revealjs" class="title-slide slide level1 center" data-number="2">
-<h1><span class="header-section-number">2</span> What is Quarto and RevealJs?</h1>
-<div class="columns">
-<div class="column" style="width:30%;">
-<p><img data-src="./img/quarto.png"></p>
-</div><div class="column" style="width:70%;">
-<p>an open-source scientific and technical publishing system</p>
-<ul>
-<li>Author using <strong>Jupyter</strong> notebooks or with plain text markdown in your favorite editor</li>
-<li>Write using <strong>Pandoc markdown</strong>, including equations, citations, crossrefs, figure panels, callouts, advanced layout, and more</li>
-<li>Create dynamic content with <strong>Python</strong>, <strong>R</strong>, <strong>Julia</strong>, and <strong>Observable</strong>.</li>
-</ul>
-</div>
-</div>
-<div class="columns">
-<div class="column" style="width:30%;">
-<p><img data-src="./img/reveal-logo.svg" style="width:150.0%"></p>
-</div><div class="column" style="width:70%;">
-<p>a HTML presentation framework</p>
-<ul>
-<li>animated slides, LaTex support, speaker notes, etc.</li>
-</ul>
-</div>
-</div>
-</section>
-
-<section id="overall-process" class="title-slide slide level1 center" data-number="3">
-<h1><span class="header-section-number">3</span> Overall process</h1>
-<ol type="1">
-<li>Create <code>.qmd</code> file, use Github Markdown + Quarto markdown.</li>
-<li>use <code>make</code> to generate <code>.html</code> file = ready to view presentation</li>
-<li>Open <code>.html</code> file in a browser and enjoy</li>
-</ol>
-</section>
-
 <section>
-<section id="highlighting-code-samples" class="title-slide slide level1 center" data-number="4">
-<h1><span class="header-section-number">4</span> Highlighting code samples</h1>
+<section id="highlighting-code-samples" class="title-slide slide level1 center" data-number="1">
+<h1><span class="header-section-number">1</span> Highlighting code samples</h1>
 
 </section>
-<section id="use-triple-backticks" class="slide level2" data-number="4.1">
-<h2><span class="header-section-number">4.1</span> Use triple backticks</h2>
+<section id="use-triple-backticks" class="slide level2" data-number="1.1">
+<h2><span class="header-section-number">1.1</span> Use triple backticks</h2>
 <p>Use markdown style: ```…``` or ```language…```.</p>
-<p>SPARQL/TTL/PIE code will be in Ontotext-specific highlighting style:</p>
+<p>SPARQL/TTL/PIE code will be in a specific highlighting style:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode numberSource sparql number-lines code-with-copy"><code class="sourceCode"><span id="cb1-1"><a href="#cb1-1"></a>select *</span>
 <span id="cb1-2"><a href="#cb1-2"></a>where {</span>
 <span id="cb1-3"><a href="#cb1-3"></a>    ?s ff-map:mentionsEntity ?entity.</span>
@@ -501,502 +445,13 @@ Nataliya Keberle, data engineer, SOL team
 <span id="cb2-8"><a href="#cb2-8"></a><span class="co"># Display the sum</span></span>
 <span id="cb2-9"><a href="#cb2-9"></a><span class="bu">print</span>(<span class="st">'The sum of </span><span class="sc">{0}</span><span class="st"> and </span><span class="sc">{1}</span><span class="st"> is </span><span class="sc">{2}</span><span class="st">'</span>.<span class="bu">format</span>(num1, num2, <span class="bu">sum</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="code-in-turtlettl" class="slide level2" data-number="4.2">
-<h2><span class="header-section-number">4.2</span> Code in Turtle/TTL</h2>
-<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource turtle number-lines code-with-copy"><code class="sourceCode"><span id="cb3-1"><a href="#cb3-1"></a>gr:Grant                    puml:stereotype "(G,lightyellow)" .</span>
-<span id="cb3-2"><a href="#cb3-2"></a>gr:Researcher               puml:stereotype "(R,lightgreen)" .</span>
-<span id="cb3-3"><a href="#cb3-3"></a>gr:Funder                   puml:stereotype "(F,lightgreen)" .</span>
-<span id="cb3-4"><a href="#cb3-4"></a>&lt;funder/(ADMINISTERING_IC)&gt; puml:stereotype "(A,lightgreen)" .</span>
-<span id="cb3-5"><a href="#cb3-5"></a>gr:Grantee                  puml:stereotype "(G,lightgreen)" .</span>
-<span id="cb3-6"><a href="#cb3-6"></a>gr:GranteeDepartment        puml:stereotype "(D,lightgreen)" .</span>
-<span id="cb3-7"><a href="#cb3-7"></a>gr:Funding                  puml:stereotype "($,yellow)" .</span>
-<span id="cb3-8"><a href="#cb3-8"></a>gr:Address                  puml:stereotype "(A,lightgreen)" .</span>
-<span id="cb3-9"><a href="#cb3-9"></a>gr:Project                  puml:stereotype "(P,violet)" .</span>
-<span id="cb3-10"><a href="#cb3-10"></a>gr:ProjectYear              puml:stereotype "(Y,violet)" .</span>
-<span id="cb3-11"><a href="#cb3-11"></a>gr:SubProject               puml:stereotype "(S,violet)" .</span>
-<span id="cb3-12"><a href="#cb3-12"></a>skos:Concept                puml:stereotype "(C,lightblue)" .</span>
-<span id="cb3-13"><a href="#cb3-13"></a>skos:ConceptScheme          puml:stereotype "(S,lightblue)" .</span>
-<span id="cb3-14"><a href="#cb3-14"></a>gr:project                  puml:arrow puml:up.</span>
-<span id="cb3-15"><a href="#cb3-15"></a>gr:projectYear              puml:arrow puml:up.</span>
-<span id="cb3-16"><a href="#cb3-16"></a>gr:subProject               puml:arrow puml:up.</span>
-<span id="cb3-17"><a href="#cb3-17"></a>gr:activityType             puml:arrow puml:down-4.</span>
-<span id="cb3-18"><a href="#cb3-18"></a>gr:applicationType          puml:arrow puml:down-4.</span>
-<span id="cb3-19"><a href="#cb3-19"></a>gr:fundingMechanism         puml:arrow puml:down-4.</span>
-<span id="cb3-20"><a href="#cb3-20"></a>gr:spendingCategory         puml:arrow puml:down-4.</span>
-<span id="cb3-21"><a href="#cb3-21"></a>gr:studySection             puml:arrow puml:down-4.</span>
-<span id="cb3-22"><a href="#cb3-22"></a>owl:sameAs                  puml:arrow puml:left-dashed-none.</span>
-<span id="cb3-23"><a href="#cb3-23"></a>&lt;project/(CORE_PROJECT_NUM)/subProject/(SUBPROJECT_ID)&gt; puml:left &lt;project/(CORE_PROJECT_NUM)/projectYear/(FULL_PROJECT_NUM)&gt;.</span>
-<span id="cb3-24"><a href="#cb3-24"></a>gr:outcomeClinicalTrial   a puml:InlineProperty.</span>
-<span id="cb3-25"><a href="#cb3-25"></a>gr:outcomePatent          a puml:InlineProperty.</span>
-<span id="cb3-26"><a href="#cb3-26"></a>gr:outcomePublication     a puml:InlineProperty.</span>
-<span id="cb3-27"><a href="#cb3-27"></a>rdfs:seeAlso              a puml:InlineProperty.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ul>
-<li>and then - some text/list item</li>
-</ul>
-
-<aside><div>
-<p>Code blocks can be 25 lines of 110 chars</p>
-</div></aside></section>
-<section id="code-in-sparql" class="slide level2" data-number="4.3">
-<h2><span class="header-section-number">4.3</span> Code in SPARQL</h2>
-<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource sparql number-lines code-with-copy"><code class="sourceCode"><span id="cb4-1"><a href="#cb4-1"></a>prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;</span>
-<span id="cb4-2"><a href="#cb4-2"></a>prefix tloimarine: &lt;http://www.ics.forth.gr/isl/ontology/iMarineTLO/&gt;</span>
-<span id="cb4-3"><a href="#cb4-3"></a>prefix tloCore: &lt;http://www.ics.forth.gr/isl/ontology/MarineTLO/&gt;</span>
-<span id="cb4-4"><a href="#cb4-4"></a>SELECT ?waterarea ?area_id ?subarea ?subarea_id ?division ?division_id ?subdivision ?subdivision_id ?subarea_id</span>
-<span id="cb4-5"><a href="#cb4-5"></a>WHERE {</span>
-<span id="cb4-6"><a href="#cb4-6"></a> ?waterarea rdf:type tloCore:BC15_Water_Area .</span>
-<span id="cb4-7"><a href="#cb4-7"></a> ?waterarea tloCore:LC1_is_identified_by ?x.</span>
-<span id="cb4-8"><a href="#cb4-8"></a> ?x tloimarine:assignedCode ?area_id .</span>
-<span id="cb4-9"><a href="#cb4-9"></a>  OPTIONAL {</span>
-<span id="cb4-10"><a href="#cb4-10"></a>    ?waterarea tloCore:LC27_has_section ?subarea .</span>
-<span id="cb4-11"><a href="#cb4-11"></a>    ?subarea tloCore:LC1_is_identified_by ?y.</span>
-<span id="cb4-12"><a href="#cb4-12"></a>    ?y tloimarine:assignedCode ?subarea_id .</span>
-<span id="cb4-13"><a href="#cb4-13"></a>  }</span>
-<span id="cb4-14"><a href="#cb4-14"></a>  OPTIONAL {</span>
-<span id="cb4-15"><a href="#cb4-15"></a>    ?subarea tloCore:LC27_has_section ?division .</span>
-<span id="cb4-16"><a href="#cb4-16"></a>    ?division tloCore:LC1_is_identified_by ?z.</span>
-<span id="cb4-17"><a href="#cb4-17"></a>    ?z tloimarine:assignedCode ?division_id .</span>
-<span id="cb4-18"><a href="#cb4-18"></a>  }</span>
-<span id="cb4-19"><a href="#cb4-19"></a>  OPTIONAL {</span>
-<span id="cb4-20"><a href="#cb4-20"></a>    ?division tloCore:LC27_has_section ?subdivision .</span>
-<span id="cb4-21"><a href="#cb4-21"></a>    ?subdivision tloCore:LC1_is_identified_by ?w.</span>
-<span id="cb4-22"><a href="#cb4-22"></a>    ?w tloimarine:assignedCode ?subdivision_id .</span>
-<span id="cb4-23"><a href="#cb4-23"></a>  }</span>
-<span id="cb4-24"><a href="#cb4-24"></a>FILTER (bound(?subarea_id) || bound(?division_id))</span>
-<span id="cb4-25"><a href="#cb4-25"></a>FILTER (bound(?subdivision_id)) </span>
-<span id="cb4-26"><a href="#cb4-26"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ul>
-<li>this code block has 26 lines, so a scrollbar appears at the right side</li>
-</ul>
-</section>
-<section id="code-blocks-can-be-with-triple-apostrophes-as-in-lucene-graphdb-connector-example-but" class="slide level2" data-number="4.4">
-<h2><span class="header-section-number">4.4</span> Code blocks can be with triple apostrophes, as in Lucene GraphDB connector example, but</h2>
-<p>Don’t use ``` sparql…```, instead, mark code block with ```…```. Ontotext code highlighter “moves” opening curly bracket to the very bottom.</p>
-<pre><code>PREFIX luc: &lt;http://www.ontotext.com/connectors/lucene#&gt;
-PREFIX luc-index: &lt;http://www.ontotext.com/connectors/lucene/instance#&gt;
-
-INSERT DATA {
-    luc-index:my_index luc:createConnector '''
-    { &lt;---this bracket 
-  "types": [
-    "http://www.ontotext.com/example/wine#Wine"
-  ],
-  "fields": [
-    {
-      "fieldName": "grape",
-      "propertyChain": [
-        "http://www.ontotext.com/example/wine#madeFromGrape",
-        "http://www.w3.org/2000/01/rdf-schema#label"
-      ]
-    },
-    {
-      "fieldName": "sugar",
-      "propertyChain": [
-        "http://www.ontotext.com/example/wine#hasSugar"
-      ],
-      "analyzed": false,
-      "multivalued": false
-    },
-    {
-      "fieldName": "year",
-      "propertyChain": [
-        "http://www.ontotext.com/example/wine#hasYear"
-      ],
-      "analyzed": false
-    }
-  ]
-}''' .
-}</code></pre>
-</section></section>
-<section>
-<section id="tables" class="title-slide slide level1 center" data-number="5">
-<h1><span class="header-section-number">5</span> Tables</h1>
-
-</section>
-<section id="table-styles" class="slide level2" data-number="5.1">
-<h2><span class="header-section-number">5.1</span> Table styles</h2>
-<p>Tables can be markdown-style and quarto-style.</p>
-<div class="panel-tabset">
-<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Markdown</a></li><li><a href="#tabset-1-2">Quarto-style</a></li></ul>
-<div class="tab-content">
-<div id="tabset-1-1">
-<pre>| Default | Left | Right | Center |
-|---------|:-----|------:|:------:|
-| 12      | 12   |    12 |   12   |
-| 123     | 123  |   123 |  123   |
-| 1       | 1    |     1 |   1    |
-</pre>
-<p>results in</p>
-<table>
-<thead>
-<tr class="header">
-<th>Default</th>
-<th style="text-align: left;">Left</th>
-<th style="text-align: right;">Right</th>
-<th style="text-align: center;">Center</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>12</td>
-<td style="text-align: left;">12</td>
-<td style="text-align: right;">12</td>
-<td style="text-align: center;">12</td>
-</tr>
-<tr class="even">
-<td>123</td>
-<td style="text-align: left;">123</td>
-<td style="text-align: right;">123</td>
-<td style="text-align: center;">123</td>
-</tr>
-<tr class="odd">
-<td>1</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: center;">1</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div id="tabset-1-2">
-Such code
-<pre>::::{.columns}
-::: {.column width="30%"}
-&lt;div class="right-centered-text"&gt;![](../../resources/ontotext.png)&lt;/div&gt;
-:::
-::: {.column width="70%"}
-More text goes here...
-:::
-::::
-</pre>
-<p>results in</p>
-<div class="columns">
-<div class="column" style="width:30%;">
-<div class="right-centered-text">
-<img data-src="../../resources/ontotext.png">
-</div>
-</div><div class="column" style="width:70%;">
-<p>More text goes here…</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="quarto-columns" class="slide level2" data-number="5.2">
-<h2><span class="header-section-number">5.2</span> Quarto columns</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<div class="centered-text">
-<img data-src="./img/big-picture.png" style="width:60.0%">
-</div>
-</div><div class="column" style="width:50%;">
-<div class="right-centered-text">
-<p>By default, text in Quarto is left-oriented, but with custom CSS it is possible to change orientation of text</p>
-</div>
-<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource html number-lines code-with-copy"><code class="sourceCode html"><span id="cb6-1"><a href="#cb6-1"></a>::::{.columns}</span>
-<span id="cb6-2"><a href="#cb6-2"></a>::: {.column width="50%"}</span>
-<span id="cb6-3"><a href="#cb6-3"></a><span class="kw">&lt;div</span> <span class="er">class</span><span class="ot">=</span><span class="st">"centered-text"</span><span class="kw">&gt;</span></span>
-<span id="cb6-4"><a href="#cb6-4"></a>![](./img/big-picture.png){width=60%}<span class="kw">&lt;/div&gt;</span></span>
-<span id="cb6-5"><a href="#cb6-5"></a>:::</span>
-<span id="cb6-6"><a href="#cb6-6"></a>::: {.column width="50%"}</span>
-<span id="cb6-7"><a href="#cb6-7"></a><span class="kw">&lt;div</span> <span class="er">class</span><span class="ot">=</span><span class="st">"right-centered-text"</span><span class="kw">&gt;</span></span>
-<span id="cb6-8"><a href="#cb6-8"></a>By default, text in Quarto is left-oriented, but with custom CSS it is possible to change orientation of text</span>
-<span id="cb6-9"><a href="#cb6-9"></a><span class="kw">&lt;/div&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><strong>Important</strong>: Ctrl + Left mouse button click enlarges a picture / returns to a regular view.</p>
-</div>
-</div>
-</section>
-<section id="quarto-columns-with-images-inside" class="slide level2" data-number="5.3">
-<h2><span class="header-section-number">5.3</span> Quarto columns with images inside</h2>
-<div class="columns">
-<div class="column" style="width:30%;">
-<div class="centered-text">
-<img data-src="./img/big-picture.png">
-</div>
-</div><div class="column" style="width:70%;">
-<ul>
-<li><strong>Current solution is</strong>: adjust the column widths to see the whole picture without any scale. E.g., these image and text are perfectly seen with column widths 30/70, whereas column widths 50/50 will require adding {width=70%} (or other) to <code>![](./img/big-picture.png)</code></li>
-</ul>
-<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource html number-lines code-with-copy"><code class="sourceCode html"><span id="cb7-1"><a href="#cb7-1"></a>::::{.columns}</span>
-<span id="cb7-2"><a href="#cb7-2"></a>::: {.column width="30%"}</span>
-<span id="cb7-3"><a href="#cb7-3"></a><span class="kw">&lt;div</span> <span class="er">class</span><span class="ot">=</span><span class="st">"centered-text"</span><span class="kw">&gt;</span></span>
-<span id="cb7-4"><a href="#cb7-4"></a>![](./img/big-picture.png)<span class="kw">&lt;/div&gt;</span></span>
-<span id="cb7-5"><a href="#cb7-5"></a>:::</span>
-<span id="cb7-6"><a href="#cb7-6"></a>::: {.column width="70%"}</span>
-<span id="cb7-7"><a href="#cb7-7"></a>text goes here</span>
-<span id="cb7-8"><a href="#cb7-8"></a>:::</span>
-<span id="cb7-9"><a href="#cb7-9"></a>::::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-</section>
-<section id="rendering-large-tables" class="slide level2" data-number="5.4">
-<h2><span class="header-section-number">5.4</span> Rendering large tables</h2>
-<ul>
-<li>use <code>{.scrollable .smaller}</code> in a slide title markdown or</li>
-<li>use <code>scrollable: true smaller: true</code> in <code>_metadata.yml</code>
-<ul>
-<li>the minus is that the header of the table is scrollable as well, so when we see last rows of the table, we don’t see the table header.</li>
-</ul></li>
-</ul>
-<table>
-<thead>
-<tr class="header">
-<th>Table</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>1</td>
-</tr>
-<tr class="even">
-<td>2</td>
-</tr>
-<tr class="odd">
-<td>3</td>
-</tr>
-<tr class="even">
-<td>4</td>
-</tr>
-<tr class="odd">
-<td>5</td>
-</tr>
-<tr class="even">
-<td>6</td>
-</tr>
-<tr class="odd">
-<td>7</td>
-</tr>
-<tr class="even">
-<td>8</td>
-</tr>
-<tr class="odd">
-<td>9</td>
-</tr>
-<tr class="even">
-<td>10</td>
-</tr>
-<tr class="odd">
-<td>11</td>
-</tr>
-<tr class="even">
-<td>12</td>
-</tr>
-<tr class="odd">
-<td>13</td>
-</tr>
-<tr class="even">
-<td>14</td>
-</tr>
-<tr class="odd">
-<td>15</td>
-</tr>
-<tr class="even">
-<td>16</td>
-</tr>
-<tr class="odd">
-<td>17</td>
-</tr>
-<tr class="even">
-<td>18</td>
-</tr>
-<tr class="odd">
-<td>19</td>
-</tr>
-<tr class="even">
-<td>20</td>
-</tr>
-<tr class="odd">
-<td>21</td>
-</tr>
-<tr class="even">
-<td>22</td>
-</tr>
-<tr class="odd">
-<td>23</td>
-</tr>
-<tr class="even">
-<td>24</td>
-</tr>
-<tr class="odd">
-<td>25</td>
-</tr>
-<tr class="even">
-<td>26</td>
-</tr>
-<tr class="odd">
-<td>27</td>
-</tr>
-<tr class="even">
-<td>28</td>
-</tr>
-</tbody>
-</table>
-<div class="footer">
-
-</div>
-</section></section>
-<section>
-<section id="various-features" class="title-slide slide level1 center" data-number="6">
-<h1><span class="header-section-number">6</span> Various features</h1>
-
-</section>
-<section id="quarto-side-notes-and-footnotes" class="slide level2" data-number="6.1">
-<h2><span class="header-section-number">6.1</span> Quarto side notes and footnotes</h2>
-<ul>
-<li>When you have a main text and a side note, e.g.&nbsp;reference to a paper/project/etc., you can use Quarto-specific markdown. Side notes and footnotes do not have any numbering scheme.</li>
-</ul>
-<pre>::: aside
-[Side note: reference to a paper](http://ebooks.iospress.nl/doi/10.3233/SSW200034)
-:::
-</pre>
-<ul>
-<li>Also it is possible to have a footnote in a traditional markdown. Here is a footnote reference,
-<pre>[^1]</pre>
-and another
-<pre>[^longnote]</pre></li>
-</ul>
-<pre>[^1]: Here is the footnote.</pre>
-<pre>[^longnote]: Here's one with multiple blocks.
-    Subsequent paragraphs are indented to show that they belong to the previous footnote.
-</pre>
-
-<aside><div>
-<p><a href="http://ebooks.iospress.nl/doi/10.3233/SSW200034">Side note: reference to a paper</a></p>
-</div></aside></section>
-<section id="bare-links" class="slide level2" data-number="6.2">
-<h2><span class="header-section-number">6.2</span> Bare links</h2>
-<ul>
-<li>In Pandoc:
-<ul>
-<li>md_extension: +autolink_bare_uris</li>
-</ul></li>
-<li>In Quarto:
-<ul>
-<li>bare link is clickable: <a href="https://www.wikidata.org/wiki/Q1" class="uri">https://www.wikidata.org/wiki/Q1</a></li>
-<li><a href="https://www.wikidata.org/wiki/Q1">link in the GitHub Markdown style [text](url) is clickable</a></li>
-<li>link surrounded with &lt; &gt; is clickable: <a href="https://www.wikidata.org/wiki/Q1" class="uri">https://www.wikidata.org/wiki/Q1</a></li>
-</ul></li>
-</ul>
-</section></section>
-<section>
-<section id="spatious-texts" class="title-slide slide level1 center" data-number="7">
-<h1><span class="header-section-number">7</span> Spatious texts</h1>
-
-</section>
-<section id="very-long-lists-25-rows" class="slide level2 smaller" data-number="7.1">
-<h2><span class="header-section-number">7.1</span> Very long lists (25 rows)</h2>
-Use <code>{.smaller}</code> in a slide title markdown
-<div class="centered-text">
-## Very long lists (25 rows) {.smaller}
-</div>
-<p>Or in <code>_metadata.yml</code> write</p>
-<pre><code>format:
-  reveals:
-    scrollable: true
-    smaller: true
-  ...</code></pre>
-<ol type="1">
-<li>Far far away,</li>
-<li>behind the word mountains,</li>
-<li>far from the countries Vokalia and Consonantia,</li>
-<li>there live the blind texts</li>
-<li>Separated they live</li>
-<li>in Bookmarksgrove right at the coast of the Semantics,</li>
-<li>a large language ocean.</li>
-<li>A small river named Duden</li>
-<li>flows by their place</li>
-<li>and supplies it with the necessary regelialia.</li>
-<li>It is a paradisematic country,</li>
-<li>in which roasted parts of sentences</li>
-<li>fly into your mouth.</li>
-<li>Even the all-powerful Pointing</li>
-<li>has no control about the blind texts</li>
-<li>it is an almost unorthographic life.</li>
-<li>One day however</li>
-<li>a small line of blind text</li>
-<li>by the name of Lorem Ipsum</li>
-<li>decided to leave for the far World of Grammar.</li>
-<li>The Big Oxmox</li>
-<li>advised her not to do so,</li>
-<li>because there were thousands of bad Commas,</li>
-<li>wild Question Marks</li>
-<li>and devious Semikoli</li>
-<li>but the Little Blind Text didn’t listen.</li>
-</ol>
-<div class="footer">
-
-</div>
-</section>
-<section id="big-picture" class="slide level2" data-number="7.2">
-<h2><span class="header-section-number">7.2</span> <a href="https://ontotext.atlassian.net/browse/SOL-48">Big picture</a></h2>
-<p><img data-src="img/timeline.png"></p>
-<p>This image is set without <code>![](img/timeline.png){height=650px}</code>.</p>
-</section>
-<section id="sec-acknowledgements" class="slide level2" data-number="7.3">
-<h2><span class="header-section-number">7.3</span> Acknowledgements</h2>
+<section id="acknowledgements" class="slide level2" data-number="1.2">
+<h2><span class="header-section-number">1.2</span> Acknowledgements</h2>
 <p>To mention relevant parties in this section, use markdown table and adjust widths of images.</p>
-<div class="panel-tabset">
-<ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">Alternative 1</a></li><li><a href="#tabset-2-2">Alternative 2</a></li></ul>
-<div class="tab-content">
-<div id="tabset-2-1">
-<table>
-<colgroup>
-<col style="width: 25%">
-<col style="width: 25%">
-<col style="width: 25%">
-<col style="width: 25%">
-</colgroup>
-<tbody>
-<tr class="odd">
-<td><img data-src="./img/accord.png" width="200"></td>
-<td><img data-src="./img/bsdd.png" width="200"></td>
-<td><img data-src="./img/graphdb.png" width="200"></td>
-<td><img data-src="./img/ontotext-platform.png" width="200"></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div id="tabset-2-2">
-<table>
-<tbody>
-<tr class="odd">
-<td>Developed by</td>
-<td><img data-src="../../resources/ontotext.png" width="200"></td>
-<td><a href="https://ontotext.com/">Ontotext AD</a></td>
-</tr>
-<tr class="even">
-<td>Funded by</td>
-<td><img data-src="img/accord.png" width="200"></td>
-<td>Horizon Europe <a href="https://accordproject.eu/">Project ACCORD</a>(101056973)</td>
-</tr>
-<tr class="odd">
-<td>Powered by</td>
-<td><img data-src="img/graphdb.png" width="200"></td>
-<td><a href="https://graphdb.ontotext.com/">Ontotext GraphDB</a></td>
-</tr>
-<tr class="even">
-<td></td>
-<td><img data-src="img/ontotext-platform.png" width="200"></td>
-<td><a href="https://platform.ontotext.com/semantic-objects/">Ontotext Platform Semantic Objects</a></td>
-</tr>
-<tr class="odd">
-<td>Data from</td>
-<td><img data-src="img/bsdd.png" width="200"></td>
-<td><a href="https://www.buildingsmart.org/users/services/buildingsmart-data-dictionary/">buildingSMART Data Dictionary</a></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-<div class="footer">
 
-</div>
 
-<p><img src="../../resources/ontotext.png" class="slide-logo"></p>
-<div class="footer footer-default">
-<p>Quarto Presentations with beautiful slide decks made by RevealJs</p>
+<img src="../../resources/quarto.png" class="slide-logo r-stretch"><div class="footer footer-default">
+<p>Quarto hints</p>
 </div>
 </section></section>
     </div>
@@ -1174,7 +629,7 @@ Use <code>{.smaller}</code> in a slide title markdown
         mobileViewDistance: 2,
 
        // Parallax background image
-       parallaxBackgroundImage: '../../resources/bkg-blue.jpg', // e.g. "'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'"
+       parallaxBackgroundImage: '../../resources/bkg1.png', // e.g. "'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'"
 
         // The "normal" size of the presentation, aspect ratio will be preserved
         // when the presentation is scaled to fit different resolutions. Can be

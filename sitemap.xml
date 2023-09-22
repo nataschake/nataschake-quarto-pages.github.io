@@ -1,7 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://github.com/nataschake/quarto-pages/markdown/20230919-QuartoPresentationFeatures/presentation.html</loc>
-    <lastmod>2023-09-20T08:19:27.896Z</lastmod>
+    <loc>https://github.com/nataschake/quarto-pages/markdown/20190909-SemTechPoC-CLEOPATRA/Slides.html</loc>
+    <lastmod>2023-09-22T09:48:22.364Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/nataschake/quarto-pages/markdown/20230921/presentation2.html</loc>
+    <lastmod>2023-09-22T09:48:20.476Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/nataschake/quarto-pages/about.html</loc>
+    <lastmod>2023-09-22T09:48:18.476Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/nataschake/quarto-pages/index.html</loc>
+    <lastmod>2023-09-22T09:48:17.840Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/nataschake/quarto-pages/markdown/20230919/presentation.html</loc>
+    <lastmod>2023-09-22T09:48:19.908Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/nataschake/quarto-pages/markdown/20230922/presentation.html</loc>
+    <lastmod>2023-09-22T09:48:21.424Z</lastmod>
   </url>
 </urlset>
