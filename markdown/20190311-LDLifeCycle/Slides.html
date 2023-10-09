@@ -1,0 +1,1325 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-html/tabby.min.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.3.450">
+
+  <meta name="author" content="Nikola Tulechki, Vladimir Alexiev - Ontotext">
+  <meta name="dcterms.date" content="2019-03-12">
+  <title>mve - Semantic Data Integration and the Linked Data Lifecycle</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../../site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="../../site_libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto.css">
+  <link href="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="../../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+
+  .callout {
+    margin-top: 1em;
+    margin-bottom: 1em;  
+    border-radius: .25rem;
+  }
+
+  .callout.callout-style-simple { 
+    padding: 0em 0.5em;
+    border-left: solid #acacac .3rem;
+    border-right: solid 1px silver;
+    border-top: solid 1px silver;
+    border-bottom: solid 1px silver;
+    display: flex;
+  }
+
+  .callout.callout-style-default {
+    border-left: solid #acacac .3rem;
+    border-right: solid 1px silver;
+    border-top: solid 1px silver;
+    border-bottom: solid 1px silver;
+  }
+
+  .callout .callout-body-container {
+    flex-grow: 1;
+  }
+
+  .callout.callout-style-simple .callout-body {
+    font-size: 1rem;
+    font-weight: 400;
+  }
+
+  .callout.callout-style-default .callout-body {
+    font-size: 0.9rem;
+    font-weight: 400;
+  }
+
+  .callout.callout-titled.callout-style-simple .callout-body {
+    margin-top: 0.2em;
+  }
+
+  .callout:not(.callout-titled) .callout-body {
+      display: flex;
+  }
+
+  .callout:not(.no-icon).callout-titled.callout-style-simple .callout-content {
+    padding-left: 1.6em;
+  }
+
+  .callout.callout-titled .callout-header {
+    padding-top: 0.2em;
+    margin-bottom: -0.2em;
+  }
+
+  .callout.callout-titled .callout-title  p {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+  }
+    
+  .callout.callout-titled.callout-style-simple .callout-content  p {
+    margin-top: 0;
+  }
+
+  .callout.callout-titled.callout-style-default .callout-content  p {
+    margin-top: 0.7em;
+  }
+
+  .callout.callout-style-simple div.callout-title {
+    border-bottom: none;
+    font-size: .9rem;
+    font-weight: 600;
+    opacity: 75%;
+  }
+
+  .callout.callout-style-default  div.callout-title {
+    border-bottom: none;
+    font-weight: 600;
+    opacity: 85%;
+    font-size: 0.9rem;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+
+  .callout.callout-style-default div.callout-content {
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+
+  .callout.callout-style-simple .callout-icon::before {
+    height: 1rem;
+    width: 1rem;
+    display: inline-block;
+    content: "";
+    background-repeat: no-repeat;
+    background-size: 1rem 1rem;
+  }
+
+  .callout.callout-style-default .callout-icon::before {
+    height: 0.9rem;
+    width: 0.9rem;
+    display: inline-block;
+    content: "";
+    background-repeat: no-repeat;
+    background-size: 0.9rem 0.9rem;
+  }
+
+  .callout-title {
+    display: flex
+  }
+    
+  .callout-icon::before {
+    margin-top: 1rem;
+    padding-right: .5rem;
+  }
+
+  .callout.no-icon::before {
+    display: none !important;
+  }
+
+  .callout.callout-titled .callout-body > .callout-content > :last-child {
+    margin-bottom: 0.5rem;
+  }
+
+  .callout.callout-titled .callout-icon::before {
+    margin-top: .5rem;
+    padding-right: .5rem;
+  }
+
+  .callout:not(.callout-titled) .callout-icon::before {
+    margin-top: 1rem;
+    padding-right: .5rem;
+  }
+
+  /* Callout Types */
+
+  div.callout-note {
+    border-left-color: #4582ec !important;
+  }
+
+  div.callout-note .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAEU0lEQVRYCcVXTWhcVRQ+586kSUMMxkyaElstCto2SIhitS5Ek8xUKV2poatCcVHtUlFQk8mbaaziwpWgglJwVaquitBOfhQXFlqlzSJpFSpIYyXNjBNiTCck7x2/8/LeNDOZxDuEkgOXe++553zfefee+/OYLOXFk3+1LLrRdiO81yNqZ6K9cG0P3MeFaMIQjXssE8Z1JzLO9ls20MBZX7oG8w9GxB0goaPrW5aNMp1yOZIa7Wv6o2ykpLtmAPs/vrG14Z+6d4jpbSKuhdcSyq9wGMPXjonwmESXrriLzFGOdDBLB8Y6MNYBu0dRokSygMA/mrun8MGFN3behm6VVAwg4WR3i6FvYK1T7MHo9BK7ydH+1uurECoouk5MPRyVSBrBHMYwVobG2aOXM07sWrn5qgB60rc6mcwIDJtQrnrEr44kmy+UO9r0u9O5/YbkS9juQckLed3DyW2XV/qWBBB3ptvI8EUY3I9p/67OW+g967TNr3Sotn3IuVlfMLVnsBwH4fsnebJvyGm5GeIUA3jljERmrv49SizPYuq+z7c2H/jlGC+Ghhupn/hcapqmcudB9jwJ/3jvnvu6vu5lVzF1fXyZuZZ7U8nRmVzytvT+H3kilYvH09mLWrQdwFSsFEsxFVs5fK7A0g8gMZjbif4ACpKbjv7gNGaD8bUrlk8x+KRflttr22JEMRUbTUwwDQScyzPgedQHZT0xnx7ujw2jfVfExwYHwOsDTjLdJ2ebmeQIlJ7neo41s/DrsL3kl+W2lWvAga0tR3zueGr6GL78M3ifH0rGXrBC2aAR8uYcIA5gwV8zIE8onoh8u0Fca/ciF7j1uOzEnqcIm59sEXoGc0+z6+H45V1CvAvHcD7THztu669cnp+L0okAeIc6zjbM/24LgGM1gZk7jnRu1aQWoU9sfUOuhrmtaPIO3YY1KLLWZaEO5TKUbMY5zx8W9UJ6elpLwKXbsaZ4EFl7B4bMtDv0iRipKoDQT2sNQI9b1utXFdYisi+wzZ/ri/1m7QfDgEuvgUUEIJPq3DhX/5DWNqIXDOweC2wvIR90Oq3lDpdMIgD2r0dXvGdsEW5H6x6HLRJYU7C69VefO1x8Gde1ZFSJLfWS1jbCnhtOPxmpfv2LXOA2Xk2tvnwKKPFuZ/oRmwBwqRQDcKNeVQkYcOjtWVBuM/JuYw5b6isojIkYxyYAFn5K7ZBF10fea52y8QltAg6jnMqNHFBmGkQ1j+U43HMi2xMar1Nv0zGsf1s8nUsmUtPOOrbFIR8bHFDMB5zL13Gmr/kGlCkUzedTzzmzsaJXhYawnA3UmARpiYj5ooJZiUoxFRtK3X6pgNPv+IZVPcnwbOl6f+aBaO1CNvPW9n9LmCp01nuSaTRF2YxHqZ8DYQT6WsXT+RD6eUztwYLZ8rM+rcPxamv1VQzFUkzFXvkiVrySGQgJNvXHJAxiU3/NwiC03rSf05VBaPtu/Z7/B8Yn/w7eguloAAAAAElFTkSuQmCC');
+  }
+
+  div.callout-note.callout-style-default .callout-title {
+    background-color: #dae6fb
+  }
+
+  div.callout-important {
+    border-left-color: #d9534f !important;
+  }
+
+  div.callout-important .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAEKklEQVRYCcVXTWhcVRS+575MJym48A+hSRFr00ySRQhURRfd2HYjk2SSTokuBCkU2o0LoSKKraKIBTcuFCoidGFD08nkBzdREbpQ1EDNIv8qSGMFUboImMSZd4/f9zJv8ibJMC8xJQfO3HPPPef7zrvvvnvviIkpC9nsw0UttFunbUhpFzFtarSd6WJkStVMw5xyVqYTvkwfzuf/5FgtkVoB0729j1rjXwThS7Vio+Mo6DNnvLfahoZ+i/o32lULuJ3NNiz7q6+pyAUkJaFF6JwaM2lUJlV0MlnQn5aTRbEu0SEqHUa0A4AdiGuB1kFXRfVyg5d87+Dg4DL6m2TLAub60ilj7A1Ec4odSAc8X95sHh7+ZRPCFo6Fnp7HfU/fBng/hi10CjCnWnJjsxvDNxWw0NfV6Rv5GgP3I3jGWXumdTD/3cbEOP2ZbOZp69yniG3FQ9z1jD7bnBu9Fc2tKGC2q+uAJOQHBDRiZX1x36o7fWBs7J9ownbtO+n0/qWkvW7UPIfc37WgT6ZGR++EOJyeQDSb9UB+DZ1G6DdLDzyS+b/kBCYGsYgJbSQHuThGKRcw5xdeQf8YdNHsc6ePXrlSYMBuSIAFTGAtQo+VuALo4BX83N190NWZWbynBjhOHsmNfFWLeL6v+ynsA58zDvvAC8j5PkbOcXCMg2PZFk3q8MjI7WAG/Dp9AwP7jdGBOOQkAvlFUB+irtm16I1Zw9YBcpGTGXYmk3kQIC/Cds55l+iMI3jqhjAuaoe+am2Jw5GT3Nbz3CkE12NavmzN5+erJW7046n/CH1RO/RVa8lBLozXk9uqykkGAyRXLWlLv5jyp4RFsG5vGVzpDLnIjTWgnRy2Rr+tDKvRc7Y8AyZq10jj8DqXdnIRNtFZb+t/ZRtXcDiVnzpqx8mPcDWxgARUqx0W1QB9MeUZiNrV4qP+Ehc+BpNgATsTX8ozYKL2NtFYAHc84fG7ndxUPr+AR/iQSns7uSUufAymwDOb2+NjK27lEFocm/EE2WpyIy/Hi66MWuMKJn8RvxIcj87IM5Vh9663ziW36kR0HNenXuxmfaD8JC7tfKbrhFr7LiZCrMjrzTeGx+PmkosrkNzW94ObzwocJ7A1HokLolY+AvkTiD/q1H0cN48c5EL8Crkttsa/AXQVDmutfyku0E7jShx49XqV3MFK8IryDhYVbj7Sj2P2eBxwcXoe8T8idsKKPRcnZw1b+slFTubwUwhktrfnAt7J++jwQtLZcm3sr9LQrjRzz6cfMv9aLvgmnAGvpoaGLxM4mAEaLV7iAzQ3oU0IvD5x9ix3yF2RAAuYAOO2f7PEFWCXZ4C9Pb2UsgDeVnFSpbFK7/IWu7TPTvBqzbGdCHOJQSxiEjt6IyZmxQyEJHv6xyQsYk//moVFsN2zP6fRImjfq7/n/wFDguUQFNEwugAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-important.callout-style-default .callout-title {
+    background-color: #f7dddc
+  }
+
+  div.callout-warning {
+    border-left-color: #f0ad4e !important;
+  }
+
+  div.callout-warning .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAETklEQVRYCeVWW2gcVRg+58yaTUnizqbipZeX4uWhBEniBaoUX1Ioze52t7sRq6APio9V9MEaoWlVsFasRq0gltaAPuxms8lu0gcviE/FFOstVbSIxgcv6SU7EZqmdc7v9+9mJtNks51NTUH84ed889/PP+cmxP+d5FIbMJmNbpREu4WUkiTtCicKny0l1pIKmBzovF2S+hIJHX8iEu3hZJ5lNZGqyRrGSIQpq15AzF28jgpeY6yk6GVdrfFqdrD6Iw+QlB8g0YS2g7dyQmXM/IDhBhT0UCiRf59lfqmmDvzRt6kByV/m4JjtzuaujMUM2c5Z2d6JdKrRb3K2q6mA+oYVz8JnDdKPmmNthzkAk/lN63sYPgevrguc72aZX/L9C6x09GYyxBgCX4NlvyGUHOKELlm5rXeR1kchuChJt4SSwyddZRXgvwMGvYo4QSlk3/zkHD8UHxwVJA6zjZZqP8v8kK8OWLnIZtLyCAJagYC4rTGW/9Pqj92N/c+LUaAj27movwbi19tk/whRCIE7Q9vyI6yvRpftAKVTdUjOW40X3h5OXsKCdmFcx0xlLJoSuQngnrJe7Kcjm4OMq9FlC7CMmScQANuNvjfP3PjGXDBaUQmbp296S5L4DrpbrHN1T87ZVEZVCzg1FF0Ft+dKrlLukI+/c9ENo+TvlTDbYFvuKPtQ9+l052rXrgKoWkDAFnvh0wTOmYn8R5f4k/jN/fZiCM1tQx9jQQ4ANhqG4hiL0qIFTGViG9DKB7GYzgubnpofgYRwO+DFjh0Zin2m4b/97EDkXkc+f6xYAPX0KK2I/7fUQuwzuwo/L3AkcjugPNixC8cHf0FyPjWlItmLxWw4Ou9YsQCr5fijMGoD/zpdRy95HRysyXA74MWOnscpO4j2y3HAVisw85hX5+AFBRSHt4ShfLFkIMXTqyKFc46xdzQM6XbAi702a7sy04J0+feReMFKp5q9esYLCqAZYw/k14E/xcLLsFElaornTuJB0svMuJINy8xkIYuL+xPAlWRceH6+HX7THJ0djLUom46zREu7tTkxwmf/FdOZ/sh6Q8qvEAiHpm4PJ4a/doJe0gH1t+aHRgCzOvBvJedEK5OFE5jpm4AGP2a8Dxe3gGJ/pAutug9Gp6he92CsSsWBaEcxGx0FHytmIpuqGkOpldqNYQK8cSoXvd+xLxXADw0kf6UkJNFtdo5MOgaLjiQOQHcn+A6h5NuL2s0qsC2LOM75PcF3yr5STuBSAcGG+meA14K/CI21HcS4LBT6tv0QAh8Dr5l93AhZzG5ZJ4VxAqdZUEl9z7WJ4aN+svMvwHHL21UKTd1mqvChH7/Za5xzXBBKrUcB0TQ+Ulgkfbi/H/YT5EptrGzsEK7tR1B7ln9BBwckYfMiuSqklSznIuoIIOM42MQO+QnduCoFCI0bpkzjCjddHPN/F+2Yu+sd9bKNpVwHhbS3LluK/0zgfwD0xYI5dXuzlQAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-warning.callout-style-default .callout-title {
+    background-color: #fcefdc
+  }
+
+  div.callout-tip {
+    border-left-color: #02b875 !important;
+  }
+
+  div.callout-tip .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAADr0lEQVRYCe1XTWgTQRj9ZjZV8a9SPIkKgj8I1bMHsUWrqYLVg4Ue6v9BwZOxSYsIerFao7UiUryIqJcqgtpimhbBXoSCVxUFe9CTiogUrUp2Pt+3aUI2u5vdNh4dmMzOzHvvezuz8xNFM0mjnbXaNu1MvFWRXkXEyE6aYOYJpdW4IXuA4r0fo8qqSMDBU0v1HJUgVieAXxzCsdE/YJTdFcVIZQNMyhruOMJKXYFoLfIfIvVIMWdsrd+Rpd86ZmyzzjJmLStqRn0v8lzkb4rVIXvnpScOJuAn2ACC65FkPzEdEy4TPWRLJ2h7z4cArXzzaOdKlbOvKKX25Wl00jSnrwVxAg3o4dRxhO13RBSdNvH0xSARv3adTXbBdTf64IWO2vH0LT+cv4GR1DJt+DUItaQogeBX/chhbTBxEiZ6gftlDNXTrvT7co4ub5A6gp9HIcHvzTa46OS5fBeP87Qm0fQkr4FsYgVQ7Qg+ZayaDg9jhg1GkWj8RG6lkeSacrrHgDaxdoBiZPg+NXV/KifMuB6//JmYH4CntVEHy/keA6x4h4CU5oFy8GzrBS18cLJMXcljAKB6INjWsRcuZBWVaS3GDrqB7rdapVIeA+isQ57Eev9eCqzqOa81CY05VLd6SamW2wA2H3SiTbnbSxmzfp7WtKZkqy4mdyAlGx7ennghYf8voqp9cLSgKdqNfa6RdRsAAkPwRuJZNbpByn+RrJi1RXTwdi8RQF6ymDwGMAtZ6TVE+4uoKh+MYkcLsT0Hk8eAienbiGdjJHZTpmNjlbFJNKDVAp2fJlYju6IreQxQ08UJDNYdoLSl6AadO+fFuCQqVMB1NJwPm69T04Wv5WhfcWyfXQB+wXRs1pt+nCknRa0LVzSA/2B+a9+zQJadb7IyyV24YAxKp2Jqs3emZTuNnKxsah+uabKbMk7CbTgJx/zIgQYErIeTKRQ9yD9wxVof5YolPHqaWo7TD6tJlh7jQnK5z2n3+fGdggIOx2kaa2YI9QWarc5Ce1ipNWMKeSG4DysFF52KBmTNMmn5HqCFkwy34rDg05gDwgH3bBi+sgFhN/e8QvRn8kbamCOhgrZ9GJhFDgfcMHzFb6BAtjKpFhzTjwv1KCVuxHvCbsSiEz4CANnj84cwHdFXAbAOJ4LTSAawGWFn5tDhLMYz6nWeU2wJfIhmIJBefcd/A5FWQWGgrWzyORZ3Q6HuV+Jf0Bj+BTX69fm1zWgK7By1YTXchFDORywnfQ7GpzOo6S+qECrsx2ifVQAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-tip.callout-style-default .callout-title {
+    background-color: #ccf1e3
+  }
+
+  div.callout-caution {
+    border-left-color: #fd7e14 !important;
+  }
+
+  div.callout-caution .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAACV0lEQVRYCdVWzWoUQRCuqp2ICBLJXgITZL1EfQDBW/bkzUMUD7klD+ATSHBEfAIfQO+iXsWDxJsHL96EHAwhgzlkg8nBg25XWb0zIb0zs9muYYWkoKeru+vn664fBqElyZNuyh167NXJ8Ut8McjbmEraKHkd7uAnAFku+VWdb3reSmRV8PKSLfZ0Gjn3a6Xlcq9YGb6tADjn+lUfTXtVmaZ1KwBIvFI11rRXlWlatwIAAv2asaa9mlB9wwygiDX26qaw1yYPzFXg2N1GgG0FMF8Oj+VIx7E/03lHx8UhvYyNZLN7BwSPgekXXLribw7w5/c8EF+DBK5idvDVYtEEwMeYefjjLAdEyQ3M9nfOkgnPTEkYU+sxMq0BxNR6jExrAI31H1rzvLEfRIdgcv1XEdj6QTQAS2wtstEALLG1yEZ3QhH6oDX7ExBSFEkFINXH98NTrme5IOaaA7kIfiu2L8A3qhH9zRbukdCqdsA98TdElyeMe5BI8Rs2xHRIsoTSSVFfCFCWGPn9XHb4cdobRIWABNf0add9jakDjQJpJ1bTXOJXnnRXHRf+dNL1ZV1MBRCXhMbaHqGI1JkKIL7+i8uffuP6wVQAzO7+qVEbF6NbS0LJureYcWXUUhH66nLR5rYmva+2tjRFtojkM2aD76HEGAD3tPtKM309FJg5j/K682ywcWJ3PASCcycH/22u+Bh7Aa0ehM2Fu4z0SAE81HF9RkB21c5bEn4Dzw+/qNOyXr3DCTQDMBOdhi4nAgiFDGCinIa2owCEChUwD8qzd03PG+qdW/4fDzjUMcE1ZpIAAAAASUVORK5CYII=');
+  }
+
+  div.callout-caution.callout-style-default .callout-title {
+    background-color: #ffe5d0
+  }
+
+  </style>
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+  <!-- basic highlighting -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
+  <link rel="stylesheet" href="../../css/onto-hljs.css">
+  <!--added for testing trySparql.js-->
+  <script src="../../js/trySparql.js"></script>
+  <!-- added for highlighting additional languages-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+  <!-- and it's easy to individually load additional languages -->
+  <!-- they'd simply add your language modules -->
+  <script src="../../js/ttl.js"></script>
+  <script src="../../js/sparql.js"></script>
+  <script src="../../js/pie.js"></script>
+  <script>hljs.registerLanguage('ttl', ttl_highlight);
+      hljs.registerLanguage('sparql', sparql_highlight);
+      hljs.registerLanguage('pie', pie_highlight);
+      hljs.initHighlightingOnLoad();
+      hljs.highlightAll();
+      //console.log(hljs.listLanguages());
+  </script>
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" data-background-image="../../resources/bkg-title.png" class="quarto-title-block center">
+  <h1 class="title">Semantic Data Integration and the Linked Data Lifecycle</h1>
+
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+Nikola Tulechki, Vladimir Alexiev - Ontotext 
+</div>
+</div>
+</div>
+
+  <p class="date">2019-03-12</p>
+</section>
+<section id="introduction" class="slide level2" data-number="0.1">
+<h2><span class="header-section-number">0.1</span> Introduction</h2>
+<ul>
+<li>Semantic Data Integration is a lot more than Ontology Engineering:
+<ul>
+<li>Dataset research</li>
+<li>Data analysis</li>
+<li>Data cleaning</li>
+<li>Semantic model: examples, shapes, documentation</li>
+<li>Ontology engineering</li>
+<li>Data mapping/conversion (ETL)</li>
+<li>Instance matching/reconciliation</li>
+<li>Data fusion/harmonization</li>
+<li>Semantic text/metadata enrichment</li>
+<li>Data enrichment, inference, aggregation</li>
+<li>Sample queries</li>
+<li>Semantic search, apps, visualizations</li>
+</ul></li>
+</ul>
+</section>
+<section id="how-does-this-differ-from-data-warehousing" class="slide level2" data-number="0.2">
+<h2><span class="header-section-number">0.2</span> How Does This Differ from Data Warehousing?</h2>
+<ul>
+<li>Semantic databases (Knowledge Bases or Knowledge Graphs) are self-describing</li>
+<li>Data warehousing usually focuses on statistical data (OLAP)</li>
+<li>KGs can represent OLAP using the W3C Cube ontology, but can also represent any other kind of data</li>
+<li>There are vast LOD datasets that can be utilized in building KGs</li>
+<li>Everyone seems to be building a KG!</li>
+</ul>
+</section>
+<section id="example" class="slide level2" data-number="0.3">
+<h2><span class="header-section-number">0.3</span> Example</h2>
+<p>Google KG: Entity Pages, Disambiguation</p>
+
+<img data-src="img/KG-Jaguar.png" class="r-stretch"></section>
+<section id="competence-questions" class="slide level2" data-number="0.4">
+<h2><span class="header-section-number">0.4</span> Competence Questions</h2>
+<ul>
+<li>Before developing applications, one better develop business requirements</li>
+<li>Before procuring/integrating data, one better develop competence questions</li>
+<li>These are sample questions that the KG should be able to answer</li>
+<li>They should lead both dataset research and semantic modeling</li>
+</ul>
+</section>
+<section>
+<section id="dataset-research" class="title-slide slide level1 center" data-number="1">
+<h1><span class="header-section-number">1</span> Dataset Research</h1>
+<ul>
+<li>Given a data goal (competence questions), what datasets are available and relevant?</li>
+<li>What is the enterprise data that we “intuitively” know should be captured?</li>
+<li>Are there data gaps compared to the competence questions? How can we fill them?</li>
+</ul>
+</section>
+<section id="how-to-find-datasets" class="slide level2" data-number="1.1">
+<h2><span class="header-section-number">1.1</span> How to Find Datasets?</h2>
+<ul>
+<li>Wikidata’s <a href="https://www.wikidata.org/wiki/Special:ListProperties/external-id"><code>external-id</code> props</a> are an excellent source (over 3700)</li>
+<li>A lot of them have corresponding <a href="https://tools.wmflabs.org/mix-n-match/#/">Mix-n-Match</a> catalog
+<ul>
+<li>A lot are potentially applicable to GLAM, eg Authority control for people 510, Identifier 196, Authority control 102, Authority control for artists 59, Cultural heritage identification 34, etc</li>
+</ul></li>
+<li>Wikipedia categories and Related links</li>
+<li><a href="https://datahub.io" class="uri">https://datahub.io</a> and <a href="https://old.datahub.io" class="uri">https://old.datahub.io</a></li>
+<li><a href="http://lod-cloud.net" class="uri">http://lod-cloud.net</a></li>
+</ul>
+
+<img data-src="img/LOD-cloud-growth.png" class="r-stretch"></section>
+<section id="lod-cloud" class="slide level2" data-number="1.2">
+<h2><span class="header-section-number">1.2</span> LOD Cloud</h2>
+<p>The <a href="https://lod-cloud.net/#diagram">Linked Open Data (LOD) Cloud</a> contained 28 datasets in 2007</p>
+<p><img data-src="https://lod-cloud.net/versions/2007-11-10/lod-cloud.svg" height="500"></p>
+</section>
+<section id="datasets-in-2009" class="slide level2" data-number="1.3">
+<h2><span class="header-section-number">1.3</span> … 89 datasets in 2009 …</h2>
+<p><img data-src="https://lod-cloud.net/versions/2009-03-27/lod-cloud_colored.svg" height="500"></p>
+</section>
+<section id="datasets-in-2011" class="slide level2" data-number="1.4">
+<h2><span class="header-section-number">1.4</span> … 295 datasets in 2011 …</h2>
+<p><img data-src="https://lod-cloud.net/versions/2011-09-19/lod-cloud_colored.svg" height="500"></p>
+</section>
+<section id="datasets-in-2014" class="slide level2" data-number="1.5">
+<h2><span class="header-section-number">1.5</span> … 570 datasets in 2014 …</h2>
+<p><img data-src="https://lod-cloud.net/versions/2014-08-30/lod-cloud_colored.svg" height="500"></p>
+</section>
+<section id="datasets-today" class="slide level2" data-number="1.6">
+<h2><span class="header-section-number">1.6</span> … 1234 datasets today!</h2>
+<p><img data-src="https://lod-cloud.net/versions/2019-01-08/lod-cloud.svg" height="500"></p>
+<p>16136 links between datasets, 30B triples</p>
+</section>
+<section id="wikidata" class="slide level2" data-number="1.7">
+<h2><span class="header-section-number">1.7</span> Wikidata</h2>
+<p>Number of Creative Works and Cultural Institutions in Wikidata:</p>
+
+<img data-src="img/WD-GLAM.png" class="r-stretch"></section>
+<section id="finding-data" class="slide level2" data-number="1.8">
+<h2><span class="header-section-number">1.8</span> Finding Data</h2>
+<ul>
+<li>By Example:
+<ul>
+<li>Eg to find computer science awards, get a famous computer scientist (eg Tim Berners-Lee) and explore his awards</li>
+<li>Eg to find artist biographic info, get a well-known artist (eg Emily Carr), find mentions of her on the web, list the ones that provide good biographic text</li>
+</ul></li>
+<li>Knowledge and experience helps
+<ul>
+<li>Keep abreast of LOD developments in your domain</li>
+<li>Read papers, especially in the SWJ <a href="http://www.semantic-web-journal.net/accepted-datasets" class="uri">http://www.semantic-web-journal.net/accepted-datasets</a></li>
+</ul></li>
+</ul>
+</section></section>
+<section>
+<section id="dataset-analysis" class="title-slide slide level1 center" data-number="2">
+<h1><span class="header-section-number">2</span> Dataset Analysis</h1>
+
+</section>
+<section id="scope" class="slide level2" data-number="2.1">
+<h2><span class="header-section-number">2.1</span> Scope</h2>
+<ul>
+<li>Feasibility estimations confronting the data with the use cases.</li>
+<li>Familiarisation with the data
+<ul>
+<li>Size and complexity estimations of the data are performed</li>
+<li>The data is comprehensively understood</li>
+<li>Exceptional values are extracted and analyzed</li>
+</ul></li>
+<li>Cardinalities are extracted and analyzed</li>
+<li>The tools for the later phases are chosen</li>
+<li>General feasibility is estimated</li>
+<li>The groundwork for the mapping component of ETL is laid down</li>
+</ul>
+</section>
+<section id="key-value-analysis" class="slide level2" data-number="2.2">
+<h2><span class="header-section-number">2.2</span> Key Value Analysis</h2>
+<ul>
+<li>Key values that often drive the mapping. Key-values could be mapped to:
+<ul>
+<li>Individual (eg <code>skos:Concept</code>)</li>
+<li>Class</li>
+<li>Property</li>
+<li>or can even dictate a mapping decision, eg one mapping branch for Persons, another for Organizations</li>
+</ul></li>
+</ul>
+</section>
+<section id="key-value-example" class="slide level2" data-number="2.3">
+<h2><span class="header-section-number">2.3</span> Key Value Example</h2>
+<p>Frоm Getty LOD - <a href="http://rawgit2.com/VladimirAlexiev/my/master/pres/20140905-CIDOC-GVP/index.html#slide-org8a0275d">“Excel-driven Ontology Generation™”</a></p>
+<p><img data-src="img/DSA-getty-codes.png"> <a href="http://rawgit2.com/VladimirAlexiev/my/master/pres/20140905-CIDOC-GVP/index.html#slide-org8a0275d">ref</a></p>
+</section>
+<section id="data-coverage" class="slide level2" data-number="2.4">
+<h2><span class="header-section-number">2.4</span> Data Coverage</h2>
+<p>Example: PubMed Field Statistics</p>
+
+<img data-src="img/PubMed-stats.png" class="r-stretch"></section>
+<section id="data-quality" class="slide level2" data-number="2.5">
+<h2><span class="header-section-number">2.5</span> Data Quality</h2>
+<ul>
+<li>Coverage assessment dictates what is worth converting</li>
+<li>Quality assessment drives data cleaning needs and decisions</li>
+</ul>
+</section></section>
+<section>
+<section id="data-modeling" class="title-slide slide level1 center" data-number="3">
+<h1><span class="header-section-number">3</span> Data Modeling</h1>
+
+</section>
+<section id="scope-1" class="slide level2" data-number="3.1">
+<h2><span class="header-section-number">3.1</span> Scope</h2>
+<ul>
+<li>Create a data model for the domain of interest</li>
+<li>Find existing relevant ontologies to use</li>
+<li>Add custom classes and properties as needed (Ontology Engineering)</li>
+<li>Document the model comprehensively: describe modeling patterns, justify decisions</li>
+<li>Document in machine-readable way using RDF Shapes (SHACL or ShEx)</li>
+<li>Make examples that can drive (generate) other artifacts, eg example diagrams, shapes</li>
+</ul>
+</section>
+<section id="url-design" class="slide level2" data-number="3.2">
+<h2><span class="header-section-number">3.2</span> URL Design</h2>
+<ul>
+<li>“URL Design” is something simple yet fundamental to RDF and LOD.</li>
+<li>It’s a fundamental part of TimBL’s <a href="https://www.w3.org/DesignIssues/LinkedData.html">5-Star Linked Data</a> principles: <a href="https://www.w3.org/Provider/Style/URI.html">CoolUri’s don’t change</a>, <a href="https://www.w3.org/TR/cooluris">Cool URIs for the Semantic Web</a></li>
+<li>Well-designed URLs enable highly distributed ETL development and execution</li>
+<li>Experience shows that leaving URL design to ETL devs is not a good idea: unspecified URLs cause disconnected data</li>
+<li><a href="https://docs.google.com/document/d/158vjEJM34rSmQLnrUlV4GzxyKytBJImQLGe_-QUrkQA/edit#">Platts URL Design</a> (internal document, could be shared)</li>
+<li><a href="http://vocab.getty.edu/doc/#GVP_URLs_and_Prefixes">Getty doc on URLs</a></li>
+</ul>
+</section>
+<section id="existing-or-new-ontology" class="slide level2" data-number="3.3">
+<h2><span class="header-section-number">3.3</span> Existing or New Ontology?</h2>
+<p>Pros:</p>
+<ul>
+<li>Reuse as much as possible</li>
+<li>This will save you time, and will make your data more easily reusable</li>
+<li>Search for ontologies: <a href="https://lov.okfn.org">Linked Open Vocabularies</a></li>
+</ul>
+<p>Cons:</p>
+<ul>
+<li>Multiple namespaces make data production/consumption a bit harder</li>
+<li>Schema.org is the ultimate “chauvinistic” example: single namespace, and even extensions (eg GoodRelations or SchemaBibEx) land in the same namespace.
+<ul>
+<li>I guess webmasters like the simplicity (and still often get it wrong ;-)</li>
+</ul></li>
+<li>Don’t reuse a complex ontology for a single term (heavy ontology baggage)</li>
+<li>Consider reusing ontology terms, but not necessarily loading the ontology
+<ul>
+<li>Example: every <code>dct:</code> property is a subprop of <code>dc:</code>, and such inference may be useless to you</li>
+</ul></li>
+</ul>
+</section>
+<section id="ontology-methodologies" class="slide level2" data-number="3.4">
+<h2><span class="header-section-number">3.4</span> Ontology Methodologies</h2>
+<p>How to do ontology engineering?</p>
+<ul>
+<li>Avoid it if you can (i.e.&nbsp;reuse ;-)</li>
+<li>Competence Questions !</li>
+<li>Methods such as DILIGENT, METHONTOLOGY, NeON Methodology, ROO Kanga, SAMOD (Simplified Agile Methodology), HCOME (Human-centered ontology method), Aspect OntoMaven (Aspect-Oriented Ontology Development), IDEF5, ONTOCOM (cost estimation)</li>
+<li><a href="http://ontologydesignpatterns.org">Ontology Design Patterns</a>: typical situations. Composable!</li>
+<li>Top-level ontologies: BFO, CCO, DOL/DOLCE, SUMO, UFO, Proton…
+<ul>
+<li>For cultural heritage: CIDOC CRM, ConML/CHARM</li>
+</ul></li>
+</ul>
+</section></section>
+<section>
+<section id="data-conversion-etl" class="title-slide slide level1 center" data-number="4">
+<h1><span class="header-section-number">4</span> Data Conversion (ETL)</h1>
+
+</section>
+<section id="scope-2" class="slide level2" data-number="4.1">
+<h2><span class="header-section-number">4.1</span> Scope</h2>
+<ul>
+<li>Transformation and homogenization of data sources into the target format, in order to populate the semantic model with instances</li>
+<li>Important elements:
+<ul>
+<li>Choice of tools in accordance with the need and requirements</li>
+<li>Maintainability of the solution</li>
+<li>Reproducibility / exportability / portability</li>
+<li>Data cleaning</li>
+</ul></li>
+<li>Other Considerations:
+<ul>
+<li>formats</li>
+<li>size scale (tools parse in memory)</li>
+<li>consistency with existing conventions (project, sector)</li>
+</ul></li>
+</ul>
+</section>
+<section id="example-1" class="slide level2" data-number="4.2">
+<h2><span class="header-section-number">4.2</span> Example</h2>
+
+<img data-src="img/etl-eval.png" class="r-stretch"><p>Onto <a href="https://confluence.ontotext.com/display/DOM/ETL+Tools+evaluation">ETL tools evaluation</a></p>
+</section></section>
+<section>
+<section id="validation" class="title-slide slide level1 center" data-number="5">
+<h1><span class="header-section-number">5</span> Validation</h1>
+
+</section>
+<section id="rdf-shapes" class="slide level2" data-number="5.1">
+<h2><span class="header-section-number">5.1</span> RDF Shapes</h2>
+<p>TODO links</p>
+<ul>
+<li>ShEx: W3C community spec. Pros: much briefer (compact, JSON and RDF representations), allows recursive data models, flexible focus nodes (shape map).</li>
+<li>SHACL: W3C standard. SHACL-core and SHACL-standard. Advanced Features is a community spec. Pro: standardizes validation results</li>
+<li><a href="http://book.validatingrdf.com/">Validating RDF book</a> (reviewed by Ontotext)</li>
+<li>Implementations <a href="https://github.com/validatingrdf/validatingrdf.github.io/wiki/Updated-list-of-implementations">at Validating RDF wiki</a>): summarized at next slides, but see the link for more details!</li>
+</ul>
+</section>
+<section id="shex-implementations" class="slide level2" data-number="5.2">
+<h2><span class="header-section-number">5.2</span> ShEx Implementations</h2>
+<table>
+<thead>
+<tr class="header">
+<th>name</th>
+<th>language</th>
+<th>playground, source, distribution</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>shex.js</td>
+<td>js</td>
+<td><a href="http://rawgit.com/shexSpec/shex.js/master/doc/shex-simple.html" class="uri">http://rawgit.com/shexSpec/shex.js/master/doc/shex-simple.html</a>, <a href="https://github.com/shexSpec/shex.js/" class="uri">https://github.com/shexSpec/shex.js/</a></td>
+</tr>
+<tr class="even">
+<td>ShEx NPM</td>
+<td>js</td>
+<td><a href="https://www.npmjs.com/package/shex" class="uri">https://www.npmjs.com/package/shex</a></td>
+</tr>
+<tr class="odd">
+<td>ShEx-validator</td>
+<td>js</td>
+<td><a href="https://github.com/HW-SWeL/ShEx-validator" class="uri">https://github.com/HW-SWeL/ShEx-validator</a></td>
+</tr>
+<tr class="even">
+<td>Validata</td>
+<td>js</td>
+<td><a href="http://hw-swel.github.io/Validata/" class="uri">http://hw-swel.github.io/Validata/</a>, <a href="https://www.w3.org/2015/03/ShExValidata/" class="uri">https://www.w3.org/2015/03/ShExValidata/</a>, <a href="https://github.com/HW-SWeL/Validata" class="uri">https://github.com/HW-SWeL/Validata</a></td>
+</tr>
+<tr class="odd">
+<td>ShExJava</td>
+<td>java</td>
+<td><a href="http://shexjava.lille.inria.fr/" class="uri">http://shexjava.lille.inria.fr/</a>, <a href="https://github.com/iovka/shex-java" class="uri">https://github.com/iovka/shex-java</a>, <a href="https://gforge.inria.fr/projects/shex-impl/" class="uri">https://gforge.inria.fr/projects/shex-impl/</a></td>
+</tr>
+<tr class="even">
+<td>RDFShape, ShaclEx</td>
+<td>scala</td>
+<td><a href="http://rdfshape.weso.es/" class="uri">http://rdfshape.weso.es/</a>, <a href="http://shaclex.herokuapp.com/" class="uri">http://shaclex.herokuapp.com/</a>, <a href="https://github.com/labra/rdfshape" class="uri">https://github.com/labra/rdfshape</a>, <a href="https://github.com/labra/shaclex" class="uri">https://github.com/labra/shaclex</a></td>
+</tr>
+<tr class="odd">
+<td>TrucHLe</td>
+<td>scala</td>
+<td><a href="https://github.com/TrucHLe/SHACL" class="uri">https://github.com/TrucHLe/SHACL</a></td>
+</tr>
+<tr class="even">
+<td>PyShEx</td>
+<td>python</td>
+<td><a href="https://github.com/hsolbrig/PyShEx" class="uri">https://github.com/hsolbrig/PyShEx</a></td>
+</tr>
+<tr class="odd">
+<td>shex.rb</td>
+<td>ruby</td>
+<td><a href="https://github.com/ruby-rdf/shex" class="uri">https://github.com/ruby-rdf/shex</a></td>
+</tr>
+<tr class="even">
+<td>ShExkell</td>
+<td>haskell</td>
+<td><a href="https://github.com/weso/shexkell" class="uri">https://github.com/weso/shexkell</a></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="shacl-implementations" class="slide level2" data-number="5.3">
+<h2><span class="header-section-number">5.3</span> SHACL Implementations</h2>
+<table>
+<thead>
+<tr class="header">
+<th>name</th>
+<th>language</th>
+<th>playground, source,distribution</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>SHACL API</td>
+<td>java</td>
+<td><a href="https://github.com/TopQuadrant/shacl" class="uri">https://github.com/TopQuadrant/shacl</a></td>
+</tr>
+<tr class="even">
+<td>SHACL rdf4</td>
+<td>java</td>
+<td><a href="https://github.com/eclipse/rdf4j-storage" class="uri">https://github.com/eclipse/rdf4j-storage</a></td>
+</tr>
+<tr class="odd">
+<td>SHACL batch</td>
+<td>java</td>
+<td><a href="https://github.com/PaulZH/shacl-batch-validator" class="uri">https://github.com/PaulZH/shacl-batch-validator</a></td>
+</tr>
+<tr class="even">
+<td>ELI-validator</td>
+<td>java</td>
+<td><a href="http://publications.europa.eu/eli-validator/home" class="uri">http://publications.europa.eu/eli-validator/home</a>, <a href="http://labs.sparna.fr/eli-validator/" class="uri">http://labs.sparna.fr/eli-validator/</a>,</td>
+</tr>
+<tr class="odd">
+<td>OSLO Validator</td>
+<td>java</td>
+<td><a href="https://data.vlaanderen.be/shacl-validator/" class="uri">https://data.vlaanderen.be/shacl-validator/</a>, <a href="https://github.com/pwc-technology-be/OSLO2Validator" class="uri">https://github.com/pwc-technology-be/OSLO2Validator</a>, <a href="https://github.com/Informatievlaanderen/OSLO-Validator" class="uri">https://github.com/Informatievlaanderen/OSLO-Validator</a></td>
+</tr>
+<tr class="even">
+<td>shacl-runner</td>
+<td>scala</td>
+<td><a href="https://github.com/balhoff/shacl-runner" class="uri">https://github.com/balhoff/shacl-runner</a></td>
+</tr>
+<tr class="odd">
+<td>STTL SHACL</td>
+<td>java</td>
+<td><a href="http://corese.inria.fr/" class="uri">http://corese.inria.fr/</a>, <a href="http://ns.inria.fr/sparql-template" class="uri">http://ns.inria.fr/sparql-template</a></td>
+</tr>
+<tr class="even">
+<td>Netage SHACL</td>
+<td>java</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>SHACL JS</td>
+<td>js</td>
+<td><a href="http://shacl.org/playground/" class="uri">http://shacl.org/playground/</a>, <a href="https://github.com/TopQuadrant/shacl-js" class="uri">https://github.com/TopQuadrant/shacl-js</a></td>
+</tr>
+<tr class="even">
+<td>SHACL-Check</td>
+<td>js</td>
+<td><a href="https://github.com/linkeddata/shacl-check" class="uri">https://github.com/linkeddata/shacl-check</a></td>
+</tr>
+<tr class="odd">
+<td>RDFShape, ShaclEx</td>
+<td>scala</td>
+<td><a href="http://rdfshape.weso.es/" class="uri">http://rdfshape.weso.es/</a>, <a href="http://shaclex.herokuapp.com/" class="uri">http://shaclex.herokuapp.com/</a>, <a href="https://github.com/labra/rdfshape" class="uri">https://github.com/labra/rdfshape</a>, <a href="https://github.com/labra/shaclex" class="uri">https://github.com/labra/shaclex</a></td>
+</tr>
+<tr class="even">
+<td>pySHACL</td>
+<td>python</td>
+<td><a href="https://github.com/CSIRO-enviro-informatics/pyshacl-webservice" class="uri">https://github.com/CSIRO-enviro-informatics/pyshacl-webservice</a>, <a href="https://github.com/RDFLib/pySHACL" class="uri">https://github.com/RDFLib/pySHACL</a></td>
+</tr>
+<tr class="odd">
+<td>RDFUnit</td>
+<td>java</td>
+<td><a href="https://github.com/AKSW/RDFUnit/" class="uri">https://github.com/AKSW/RDFUnit/</a></td>
+</tr>
+<tr class="even">
+<td>alt SHACL</td>
+<td>python</td>
+<td><a href="https://github.com/pfps/shacl" class="uri">https://github.com/pfps/shacl</a></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="custom-test-suites" class="slide level2" data-number="5.4">
+<h2><span class="header-section-number">5.4</span> Custom Test Suites</h2>
+<ul>
+<li><a href="http://rdfunit.aksw.org/">RDFUnit</a> (<a href="https://github.com/AKSW/RDFUnit">source</a>, <a href="https://github.com/AKSW/RDFUnit">demo</a>): sources custom patterns, OWL, OCLS shapes, DC Application Profiles, SHACL</li>
+<li>Only SPARQL queries
+<ul>
+<li>negative examples</li>
+</ul></li>
+<li>SPARQL queries and example output
+<ul>
+<li>Compares output of a query to the desired output</li>
+<li>Could test data and/or the queries themselves</li>
+</ul></li>
+<li>Domain Specific-Validation
+<ul>
+<li>Eg for SKOS: <a href="https://github.com/cmader/qSKOS">qSKOS</a>, <a href="http://labs.sparna.fr/skos-testing-tool/">Sparna SKOS Tester</a></li>
+</ul></li>
+</ul>
+</section></section>
+<section>
+<section id="text-and-data-enrichment" class="title-slide slide level1 center" data-number="6">
+<h1><span class="header-section-number">6</span> Text and data enrichment</h1>
+
+</section>
+<section id="scope-3" class="slide level2" data-number="6.1">
+<h2><span class="header-section-number">6.1</span> Scope</h2>
+<p>Semantic enrichment is the adding of value to a dataset by increasing the amount of queryable information it contains and/or decreasing the data’s noisiness. This is done in several ways:</p>
+<ul>
+<li>Inference and link discovery</li>
+<li>Thesaurus harmonisation</li>
+<li>Entity mining</li>
+<li>Instance matching and deduplication.</li>
+<li>Data fusion</li>
+</ul>
+</section>
+<section id="inference-and-link-discovery" class="slide level2" data-number="6.2">
+<h2><span class="header-section-number">6.2</span> Inference and link discovery</h2>
+<ul>
+<li>Inference : Attributes and relations are added based on rules.</li>
+<li>Link discovery. The structure and redundancies of the graph are exploited in order to discover new relations between entities (graph based ML)
+<ul>
+<li>Subgraph similiarity to infer new links</li>
+<li>e.g Facebook friend recommendations</li>
+<li>e.g Amazon product recommendations</li>
+</ul></li>
+</ul>
+</section>
+<section id="thesaurus-harmonisation" class="slide level2" data-number="6.3">
+<h2><span class="header-section-number">6.3</span> Thesaurus harmonisation</h2>
+</section>
+<section id="entity-mining." class="slide level2" data-number="6.4">
+<h2><span class="header-section-number">6.4</span> Entity mining.</h2>
+<ul>
+<li>Unstructured data (text, images) is processed in order to extract novel entities and relations and add them to the dataset.</li>
+<li>Content classification
+<ul>
+<li>Attribution of categories to text, images or sound clips<br>
+</li>
+<li>Statistical methods</li>
+<li>e.g e-mail filters</li>
+</ul></li>
+<li>NLP Named entity recognition (NER)
+<ul>
+<li>Ontotext <a href="https://now.ontotext.com/#channel?uri=http%3A%2F%2Fwww.ontotext.com%2Fpublishing%23International&amp;type=channel">NOW</a> and <a href="https://tag.ontotext.com/">TAG</a>,</li>
+<li><a href="https://cloud.google.com/natural-language/">Google NLP</a>, etc</li>
+</ul></li>
+<li>Relation extraction from text
+<ul>
+<li>NER + relations between entities</li>
+</ul></li>
+</ul>
+</section>
+<section id="data-fusion." class="slide level2" data-number="6.5">
+<h2><span class="header-section-number">6.5</span> Data fusion.</h2>
+<p><em>Redundant data is deduplicated and fused to produce a single master dataset without conflicts. </em> selection of representative single fields (eg logo), * accumulation of multiple fields (eg names, transactions), * aggregation of summary fields (eg count or total amount)</p>
+</section>
+<section id="matching" class="slide level2" data-number="6.6">
+<h2><span class="header-section-number">6.6</span> Matching</h2>
+<ul>
+<li>Critical problem in data cleaning and integration</li>
+<li>Overlapping instances across multiple datasets (client only or client and LOD) are matched and the sum of their attributes across datasets become available for querying.</li>
+<li>Entity matching (EM) finds data instances that refer to the same real-world entity</li>
+<li>We focus on EM as a process of transforming a string to a thing based on the provided semantic context</li>
+</ul>
+</section>
+<section id="basic-reconciliation" class="slide level2" data-number="6.7">
+<h2><span class="header-section-number">6.7</span> Basic Reconciliation</h2>
+<ul>
+<li>Fuzzy name matching</li>
+<li>Simple additional features (e.g.&nbsp;exact string matches, differences in numbers)</li>
+<li>Out-of-the-box match scoring &amp; available recon services
+<ul>
+<li>Openrefine, Ontorefine</li>
+<li><a href="https://www.wikidata.org/wiki/Wikidata:Tools/OpenRefine#Wikidata_reconciliation">wikidata recon service</a></li>
+<li><a href="http://okfnlabs.org/reconcile-csv/">reconcile-csv</a> - build-your-own<br>
+## Advanced Reconciliation</li>
+</ul></li>
+<li>Custom field parsing and normalization - additional parsing rules (acronyms, titles, dates etc)</li>
+<li>Complex additional features
+<ul>
+<li>text analysis</li>
+<li>hierarchical features</li>
+<li>geographical features</li>
+<li>network topology</li>
+</ul></li>
+<li>Custom match scoring (possibly deep learning) e.g <a href="https://github.com/dhwajraj/deep-siamese-text-similarity">deep siamese text similarity</a></li>
+</ul>
+</section></section>
+<section id="modelling-update-flows" class="title-slide slide level1 center" data-number="7">
+<h1><span class="header-section-number">7</span> Modelling update flows</h1>
+
+</section>
+
+<section>
+<section id="model-documentation" class="title-slide slide level1 center" data-number="8">
+<h1><span class="header-section-number">8</span> Model documentation</h1>
+
+</section>
+<section id="scope-4" class="slide level2" data-number="8.1">
+<h2><span class="header-section-number">8.1</span> Scope</h2>
+<ul>
+<li>Data Diagrams</li>
+<li>Detailed description of both new ontology terms (classes and properties) and reused ones (describing the specific use in our application profile).</li>
+<li>Reference documentation
+<ul>
+<li>Generated by an <a href="https://confluence.ontotext.com/display/DOM/Ontology+Documentation+Generators">ontology documentation tool</a><br>
+</li>
+<li>Hand written comprehensive doc</li>
+</ul></li>
+<li>Semantic publishing of model<br>
+</li>
+<li>Sample Queries</li>
+</ul>
+</section>
+<section id="sample-queries" class="slide level2" data-number="8.2">
+<h2><span class="header-section-number">8.2</span> Sample queries</h2>
+<ul>
+<li>Very handy way to augment the documentation
+<ul>
+<li>Can be used by a new user to get a feel of the data</li>
+<li>Highly informative when combined with a short description</li>
+<li>Stem out of competence questions</li>
+<li>Can be used for testing purposes</li>
+</ul></li>
+<li>Eg <a href="http://vocab.getty.edu/queries">GVP sample queries</a></li>
+</ul>
+</section></section>
+<section>
+<section id="semantic-search-apps-and-visualizations" class="title-slide slide level1 center" data-number="9">
+<h1><span class="header-section-number">9</span> Semantic search apps and visualizations</h1>
+
+</section>
+<section id="semantic-search" class="slide level2" data-number="9.1">
+<h2><span class="header-section-number">9.1</span> Semantic Search</h2>
+<ul>
+<li>Search for concepts rather than strings TODO nice example</li>
+</ul>
+</section>
+<section id="visualizations" class="slide level2" data-number="9.2">
+<h2><span class="header-section-number">9.2</span> Visualizations</h2>
+<ul>
+<li><a href="https://trr.ontotext.com/graphs-visualizations?saved=f1e48609dbea4e79be96c0bdcba24617">GDB Visual Graph</a></li>
+<li>Wikidata Viz <a href="https://www.wikidata.org/wiki/Wikidata:Tools/Visualize_data">page</a></li>
+<li>Neo4j Graph Database Platform <a href="https://neo4j.com/blog/graph-visualization-day-recap/">Graph V-Day recap</a></li>
+</ul>
+
+
+<img src="../../resources/quarto.png" class="slide-logo r-stretch"><div class="footer footer-default">
+
+</div>
+</section></section>
+    </div>
+  </div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="../../site_libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="../../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="../../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="../../site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="../../site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="../../site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="../../site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="../../site_libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'smaller': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'none',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+       // Parallax background image
+       parallaxBackgroundImage: '../../resources/bkg1.png', // e.g. "'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'"
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1600,
+
+        height: 900,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0,
+
+        math: {
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    <script id="quarto-html-after-body" type="application/javascript">
+    window.document.addEventListener("DOMContentLoaded", function (event) {
+      const toggleBodyColorMode = (bsSheetEl) => {
+        const mode = bsSheetEl.getAttribute("data-mode");
+        const bodyEl = window.document.querySelector("body");
+        if (mode === "dark") {
+          bodyEl.classList.add("quarto-dark");
+          bodyEl.classList.remove("quarto-light");
+        } else {
+          bodyEl.classList.add("quarto-light");
+          bodyEl.classList.remove("quarto-dark");
+        }
+      }
+      const toggleBodyColorPrimary = () => {
+        const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+        if (bsSheetEl) {
+          toggleBodyColorMode(bsSheetEl);
+        }
+      }
+      toggleBodyColorPrimary();  
+      const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+      tabsets.forEach(function(tabset) {
+        const tabby = new Tabby('#' + tabset.id);
+      });
+      const isCodeAnnotation = (el) => {
+        for (const clz of el.classList) {
+          if (clz.startsWith('code-annotation-')) {                     
+            return true;
+          }
+        }
+        return false;
+      }
+      const clipboard = new window.ClipboardJS('.code-copy-button', {
+        text: function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+        }
+      });
+      clipboard.on('success', function(e) {
+        // button target
+        const button = e.trigger;
+        // don't keep focus
+        button.blur();
+        // flash "checked"
+        button.classList.add('code-copy-button-checked');
+        var currentTitle = button.getAttribute("title");
+        button.setAttribute("title", "Copied!");
+        let tooltip;
+        if (window.bootstrap) {
+          button.setAttribute("data-bs-toggle", "tooltip");
+          button.setAttribute("data-bs-placement", "left");
+          button.setAttribute("data-bs-title", "Copied!");
+          tooltip = new bootstrap.Tooltip(button, 
+            { trigger: "manual", 
+              customClass: "code-copy-button-tooltip",
+              offset: [0, -8]});
+          tooltip.show();    
+        }
+        setTimeout(function() {
+          if (tooltip) {
+            tooltip.hide();
+            button.removeAttribute("data-bs-title");
+            button.removeAttribute("data-bs-toggle");
+            button.removeAttribute("data-bs-placement");
+          }
+          button.setAttribute("title", currentTitle);
+          button.classList.remove('code-copy-button-checked');
+        }, 1000);
+        // clear code selection
+        e.clearSelection();
+      });
+      function tippyHover(el, contentFn) {
+        const config = {
+          allowHTML: true,
+          content: contentFn,
+          maxWidth: 500,
+          delay: 100,
+          arrow: false,
+          appendTo: function(el) {
+              return el.closest('section.slide') || el.parentElement;
+          },
+          interactive: true,
+          interactiveBorder: 10,
+          theme: 'light-border',
+          placement: 'bottom-start'
+        };
+          config['offset'] = [0,0];
+          config['maxWidth'] = 700;
+        window.tippy(el, config); 
+      }
+      const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+      for (var i=0; i<noterefs.length; i++) {
+        const ref = noterefs[i];
+        tippyHover(ref, function() {
+          // use id or data attribute instead here
+          let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+          try { href = new URL(href).hash; } catch {}
+          const id = href.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          return note.innerHTML;
+        });
+      }
+      const findCites = (el) => {
+        const parentEl = el.parentElement;
+        if (parentEl) {
+          const cites = parentEl.dataset.cites;
+          if (cites) {
+            return {
+              el,
+              cites: cites.split(' ')
+            };
+          } else {
+            return findCites(el.parentElement)
+          }
+        } else {
+          return undefined;
+        }
+      };
+      var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+      for (var i=0; i<bibliorefs.length; i++) {
+        const ref = bibliorefs[i];
+        const citeInfo = findCites(ref);
+        if (citeInfo) {
+          tippyHover(citeInfo.el, function() {
+            var popup = window.document.createElement('div');
+            citeInfo.cites.forEach(function(cite) {
+              var citeDiv = window.document.createElement('div');
+              citeDiv.classList.add('hanging-indent');
+              citeDiv.classList.add('csl-entry');
+              var biblioDiv = window.document.getElementById('ref-' + cite);
+              if (biblioDiv) {
+                citeDiv.innerHTML = biblioDiv.innerHTML;
+              }
+              popup.appendChild(citeDiv);
+            });
+            return popup.innerHTML;
+          });
+        }
+      }
+    });
+    </script>
+    <script type="text/javascript">
+        Reveal.on('ready', event => {
+            if (event.indexh === 0) {
+                document.querySelector("div.has-logo > img.slide-logo").style.display = "none";
+            }
+        });
+        Reveal.addEventListener('slidechanged', (event) => {
+            if (event.indexh === 0) {
+                Reveal.configure({ slideNumber: null });
+                document.querySelector("div.has-logo > img.slide-logo").style.display = "none";
+            }
+            if (event.indexh === 1) {
+                Reveal.configure({ slideNumber: 'c' });
+                document.querySelector("div.has-logo > img.slide-logo").style.display = null;
+            }
+        });
+    </script>
+    
+
+</body></html>

@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.313">
+<meta name="generator" content="quarto-1.3.450">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>mve</title>
+<title>mve - List of presentations</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,6 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-listing/list.min.js"></script>
+<script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -55,10 +57,43 @@ ul.task-list li input[type="checkbox"] {
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
+<script>
 
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-all-presentations .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-title','listing-author','listing-date','listing-reading-time',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
+      page: 6,
+    pagination: { item: "<li class='page-item'><a class='page page-link' href='#'></a></li>" },
+      searchColumns: ["listing-date","listing-title","listing-author"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-all-presentations'] = new List('listing-all-presentations', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -99,7 +134,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">mve</li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">List of presentations</li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
@@ -129,12 +164,233 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
- <span class="menu-text">20190909 SemTechPoC CLEOPATRA</span></a>
+ <span class="menu-text">20180529 GitLab MergeRequests</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./markdown/20180529-GitLab-MergeRequests/Slides.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Merge requests in GitLab</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">
+ <span class="menu-text">20180601 TimeMachine ONTO CH</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./markdown/20180601-TimeMachine-ONTO-CH/Slides.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ontotext CH/DH Projects</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false">
+ <span class="menu-text">20180607 Training OTTrainingImpact</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./markdown/20180607-Training-OTTrainingImpact/Slides.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Impact of the Ontotext Training Program</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false">
+ <span class="menu-text">20180613 CLADA ONTO CH</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./markdown/20180613-CLADA-ONTO-CH/Slides.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ontotext CH/DH Projects</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false">
+ <span class="menu-text">20180718 BDG WP3</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./markdown/20180718-BDG-WP3/Slides.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">BigDataGrapes WP3 Status. Montpellier.</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="false">
+ <span class="menu-text">20180815 SemTechPoc Webinar</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./markdown/20180815-SemTechPoc-webinar/Slides.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">How to Design a Successful SemTech PoC</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="false">
+ <span class="menu-text">20180911 SemTechPoC Semantics</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./markdown/20180911-SemTechPoC-semantics/Slides.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">How to Design a Successful SemTech PoC. @ SEMANTICS18</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" aria-expanded="false">
+ <span class="menu-text">20180920 Datathon</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./markdown/20180920-Datathon/Slides.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ontotext Case: Automated Detection of Anomalous Industry Classification in Linked Data. @ Global Datathon 2018</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" aria-expanded="false">
+ <span class="menu-text">20180927 SemTechPoC Training</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./markdown/20180927-SemTechPoC-training/Slides.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">How to Design a Successful SemTech PoC</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" aria-expanded="false">
+ <span class="menu-text">20181031 SemanticTechnologiesAtOnto UniYork</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./markdown/20181031-SemanticTechnologiesAtOnto-UniYork/Slides.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Semantic technologies in practice: Designing, building and exploiting knowledge graphs at <em>Ontotext</em></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" aria-expanded="false">
+ <span class="menu-text">20181214 BankOfAmerica LunchAndShare</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-12" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./markdown/20181214-BankOfAmerica-LunchAndShare/Slides.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bank of America POC</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" aria-expanded="false">
+ <span class="menu-text">20190130 SemTechPoC Psa</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-13" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./markdown/20190130-SemTechPoC-psa/Slides.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">How to Design a Successful SemTech PoC</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" aria-expanded="false">
+ <span class="menu-text">20190311 LDLifeCycle</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-14" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./markdown/20190311-LDLifeCycle/Slides.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Semantic Data Integration and the Linked Data Lifecycle</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-15" aria-expanded="false">
+ <span class="menu-text">20190909 SemTechPoC CLEOPATRA</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-15" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-15" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./markdown/20190909-SemTechPoC-CLEOPATRA/Slides.html" class="sidebar-item-text sidebar-link">
@@ -145,13 +401,13 @@ ul.task-list li input[type="checkbox"] {
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-16" aria-expanded="false">
  <span class="menu-text">20230919</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-16" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-16" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./markdown/20230919/presentation.html" class="sidebar-item-text sidebar-link">
@@ -162,13 +418,13 @@ ul.task-list li input[type="checkbox"] {
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-17" aria-expanded="false">
  <span class="menu-text">20230921</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-17" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-17" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./markdown/20230921/presentation2.html" class="sidebar-item-text sidebar-link">
@@ -179,16 +435,33 @@ ul.task-list li input[type="checkbox"] {
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-18" aria-expanded="false">
  <span class="menu-text">20230922</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-18" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-18" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./markdown/20230922/presentation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Great presentations</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-19" aria-expanded="false">
+ <span class="menu-text">Sample</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-19" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-19" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./markdown/sample/presentation.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Great presentations</span></a>
   </div>
 </li>
@@ -209,7 +482,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">mve</h1>
+<h1 class="title">List of presentations</h1>
 </div>
 
 
@@ -224,7 +497,314 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>This is a list of presentations</p>
+<div id="listing-all-presentations" class="quarto-listing quarto-listing-container-table">
+<div class="listing-actions-group">
+   <div class="input-group input-group-sm quarto-listing-sort">
+     <span class="input-group-text"><i class="bi bi-sort-down"></i></span>
+     <select id="listing-all-presentations-sort" class="form-select" aria-label="Order By" onchange="window['quarto-listings']['listing-all-presentations'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
+       <option value="" disabled="" selected="" hidden="">Order By</option>
+       <option value="index" data-direction="asc">Default</option>
+         <option value="listing-date-sort" data-direction="asc">
+          Date - Oldest
+        </option>
+         <option value="listing-date-sort" data-direction="desc">
+          Date - Newest
+        </option>
+         <option value="listing-title-sort" data-direction="asc">
+          Title
+        </option>
+         <option value="listing-author" data-direction="asc">
+          Author
+        </option>
+     </select>
+  </div>
+    <div class="input-group input-group-sm quarto-listing-filter">
+      <span class="input-group-text"><i class="bi bi-search"></i></span>
+      <input type="text" class="search form-control" placeholder="Filter">
+    </div>
+</div>
+
+<table class="quarto-listing-table table">
+<thead>
+<tr>
+<th>
+<a class="sort" data-sort="listing-title-sort" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Title</a>
+</th>
+<th>
+<a class="sort" data-sort="listing-author" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Author</a>
+</th>
+<th>
+<a class="sort" data-sort="listing-date-sort" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Date</a>
+</th>
+<th>
+Reading Time
+</th>
+</tr>
+</thead>
+<tbody class="list">
+<tr data-index="0" data-listing-date-sort="1544745600000" data-listing-file-modified-sort="1696859239351" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-title-sort="Bank of America POC" data-listing-filename-sort="Slides.md">
+<td>
+<a href="./markdown/20181214-BankOfAmerica-LunchAndShare/Slides.html" class="title listing-title">Bank of America POC</a>
+</td>
+<td>
+<span class="listing-author">Nikola Tulechki</span>
+</td>
+<td>
+<span class="listing-date">Dec 14, 2018</span>
+</td>
+<td>
+<span class="listing-reading-time">5 min</span>
+</td>
+</tr>
+<tr data-index="1" data-listing-date-sort="1531872000000" data-listing-file-modified-sort="1696859239255" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="13" data-listing-title-sort="BigDataGrapes WP3 Status. Montpellier." data-listing-filename-sort="Slides.md">
+<td>
+<a href="./markdown/20180718-BDG-WP3/Slides.html" class="title listing-title">BigDataGrapes WP3 Status. Montpellier.</a>
+</td>
+<td>
+<span class="listing-author">Vladimir Alexiev, PhD, PMP &amp; Milena Yankova, PhD</span>
+</td>
+<td>
+<span class="listing-date">Jul 18, 2018</span>
+</td>
+<td>
+<span class="listing-reading-time">13 min</span>
+</td>
+</tr>
+<tr data-index="2" data-listing-date-sort="1694995200000" data-listing-file-modified-sort="1696859239419" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-title-sort="Great presentations" data-listing-filename-sort="presentation.qmd">
+<td>
+<a href="./markdown/20230919/presentation.html" class="title listing-title">Great presentations</a>
+</td>
+<td>
+<span class="listing-author"></span>
+</td>
+<td>
+<span class="listing-date">Sep 18, 2023</span>
+</td>
+<td>
+<span class="listing-reading-time">1 min</span>
+</td>
+</tr>
+<tr data-index="3" data-listing-date-sort="1694995200000" data-listing-file-modified-sort="1696859239419" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="10" data-listing-title-sort="Great presentations" data-listing-filename-sort="presentation.qmd">
+<td>
+<a href="./markdown/20230922/presentation.html" class="title listing-title">Great presentations</a>
+</td>
+<td>
+<span class="listing-author">Nataliya Keberle, data engineer, SOL team</span>
+</td>
+<td>
+<span class="listing-date">Sep 18, 2023</span>
+</td>
+<td>
+<span class="listing-reading-time">10 min</span>
+</td>
+</tr>
+<tr data-index="4" data-listing-date-sort="1694995200000" data-listing-file-modified-sort="1696859239423" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="10" data-listing-title-sort="Great presentations" data-listing-filename-sort="presentation.qmd">
+<td>
+<a href="./markdown/sample/presentation.html" class="title listing-title">Great presentations</a>
+</td>
+<td>
+<span class="listing-author">Nataliya Keberle, data engineer, SOL team</span>
+</td>
+<td>
+<span class="listing-date">Sep 18, 2023</span>
+</td>
+<td>
+<span class="listing-reading-time">10 min</span>
+</td>
+</tr>
+<tr data-index="5" data-listing-file-modified-sort="1696859239267" data-listing-reading-time-sort="4" data-listing-title-sort="How to Design a Successful SemTech PoC" data-listing-filename-sort="Slides.md">
+<td>
+<a href="./markdown/20180815-SemTechPoc-webinar/Slides.html" class="title listing-title">How to Design a Successful SemTech PoC</a>
+</td>
+<td>
+<span class="listing-author">Andrey Tagarev - Ontotext</span>
+</td>
+<td>
+<span class="listing-date">undefined</span>
+</td>
+<td>
+<span class="listing-reading-time">4 min</span>
+</td>
+</tr>
+<tr data-index="6" data-listing-date-sort="1569456000000" data-listing-file-modified-sort="1696859239311" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-title-sort="How to Design a Successful SemTech PoC" data-listing-filename-sort="Slides.md">
+<td>
+<a href="./markdown/20180927-SemTechPoC-training/Slides.html" class="title listing-title">How to Design a Successful SemTech PoC</a>
+</td>
+<td>
+<span class="listing-author">Alex Popov, Andrey Tagarev and Nikola Tulechki - Ontotext</span>
+</td>
+<td>
+<span class="listing-date">Sep 26, 2019</span>
+</td>
+<td>
+<span class="listing-reading-time">7 min</span>
+</td>
+</tr>
+<tr data-index="7" data-listing-date-sort="1548720000000" data-listing-file-modified-sort="1696859239359" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-title-sort="How to Design a Successful SemTech PoC" data-listing-filename-sort="Slides.md">
+<td>
+<a href="./markdown/20190130-SemTechPoC-psa/Slides.html" class="title listing-title">How to Design a Successful SemTech PoC</a>
+</td>
+<td>
+<span class="listing-author">Alex Popov, Andrey Tagarev and Nikola Tulechki - Ontotext</span>
+</td>
+<td>
+<span class="listing-date">Jan 29, 2019</span>
+</td>
+<td>
+<span class="listing-reading-time">4 min</span>
+</td>
+</tr>
+<tr data-index="8" data-listing-date-sort="NaN" data-listing-file-modified-sort="1696859239399" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-title-sort="How to Design a Successful SemTech PoC" data-listing-filename-sort="Slides.md">
+<td>
+<a href="./markdown/20190909-SemTechPoC-CLEOPATRA/Slides.html" class="title listing-title">How to Design a Successful SemTech PoC</a>
+</td>
+<td>
+<span class="listing-author">Andrey Tagarev and Nikola Tulechki - Ontotext</span>
+</td>
+<td>
+<span class="listing-date">Invalid Date</span>
+</td>
+<td>
+<span class="listing-reading-time">6 min</span>
+</td>
+</tr>
+<tr data-index="9" data-listing-date-sort="1536624000000" data-listing-file-modified-sort="1696859239287" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-title-sort="How to Design a Successful SemTech PoC.  @ SEMANTICS18" data-listing-filename-sort="Slides.md">
+<td>
+<a href="./markdown/20180911-SemTechPoC-semantics/Slides.html" class="title listing-title">How to Design a Successful SemTech PoC. @ SEMANTICS18</a>
+</td>
+<td>
+<span class="listing-author">Andrey Tagarev and Nikola Tulechki - Ontotext</span>
+</td>
+<td>
+<span class="listing-date">Sep 11, 2018</span>
+</td>
+<td>
+<span class="listing-reading-time">6 min</span>
+</td>
+</tr>
+<tr data-index="10" data-listing-date-sort="1528329600000" data-listing-file-modified-sort="1696859239187" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-title-sort="Impact of the Ontotext Training Program" data-listing-filename-sort="Slides.md">
+<td>
+<a href="./markdown/20180607-Training-OTTrainingImpact/Slides.html" class="title listing-title">Impact of the Ontotext Training Program</a>
+</td>
+<td>
+<span class="listing-author">Ivelina Nikolova, Iva Mechkunova, Nikola Tulechki</span>
+</td>
+<td>
+<span class="listing-date">Jun 7, 2018</span>
+</td>
+<td>
+<span class="listing-reading-time">8 min</span>
+</td>
+</tr>
+<tr data-index="11" data-listing-date-sort="1526342400000" data-listing-file-modified-sort="1696859239179" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-title-sort="Merge requests in GitLab" data-listing-filename-sort="Slides.md">
+<td>
+<a href="./markdown/20180529-GitLab-MergeRequests/Slides.html" class="title listing-title">Merge requests in GitLab</a>
+</td>
+<td>
+<span class="listing-author">Ivan Ivanov</span>
+</td>
+<td>
+<span class="listing-date">May 15, 2018</span>
+</td>
+<td>
+<span class="listing-reading-time">3 min</span>
+</td>
+</tr>
+<tr data-index="12" data-listing-date-sort="1527811200000" data-listing-file-modified-sort="1696859239187" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-title-sort="Ontotext CH/DH Projects" data-listing-filename-sort="Slides.md">
+<td>
+<a href="./markdown/20180601-TimeMachine-ONTO-CH/Slides.html" class="title listing-title">Ontotext CH/DH Projects</a>
+</td>
+<td>
+<span class="listing-author">Vladimir Alexiev, PhD, PMP</span>
+</td>
+<td>
+<span class="listing-date">Jun 1, 2018</span>
+</td>
+<td>
+<span class="listing-reading-time">4 min</span>
+</td>
+</tr>
+<tr data-index="13" data-listing-date-sort="1528848000000" data-listing-file-modified-sort="1696859239223" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-title-sort="Ontotext CH/DH Projects" data-listing-filename-sort="Slides.qmd">
+<td>
+<a href="./markdown/20180613-CLADA-ONTO-CH/Slides.html" class="title listing-title">Ontotext CH/DH Projects</a>
+</td>
+<td>
+<span class="listing-author">Vladimir Alexiev, PhD, PMP</span>
+</td>
+<td>
+<span class="listing-date">Jun 13, 2018</span>
+</td>
+<td>
+<span class="listing-reading-time">5 min</span>
+</td>
+</tr>
+<tr data-index="14" data-listing-date-sort="1537401600000" data-listing-file-modified-sort="1696859239307" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-title-sort="Ontotext Case: Automated Detection of Anomalous Industry Classification in Linked Data. @ Global Datathon 2018" data-listing-filename-sort="Slides.md">
+<td>
+<a href="./markdown/20180920-Datathon/Slides.html" class="title listing-title">Ontotext Case: Automated Detection of Anomalous Industry Classification in Linked Data. @ Global Datathon 2018</a>
+</td>
+<td>
+<span class="listing-author">Andrey Tagarev and Nikola Tulechki - Ontotext</span>
+</td>
+<td>
+<span class="listing-date">Sep 20, 2018</span>
+</td>
+<td>
+<span class="listing-reading-time">2 min</span>
+</td>
+</tr>
+<tr data-index="15" data-listing-date-sort="1552348800000" data-listing-file-modified-sort="1696859239387" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="22" data-listing-title-sort="Semantic Data Integration and the Linked Data Lifecycle" data-listing-filename-sort="Slides.md">
+<td>
+<a href="./markdown/20190311-LDLifeCycle/Slides.html" class="title listing-title">Semantic Data Integration and the Linked Data Lifecycle</a>
+</td>
+<td>
+<span class="listing-author">Nikola Tulechki, Vladimir Alexiev - Ontotext</span>
+</td>
+<td>
+<span class="listing-date">Mar 12, 2019</span>
+</td>
+<td>
+<span class="listing-reading-time">22 min</span>
+</td>
+</tr>
+<tr data-index="16" data-listing-date-sort="1540944000000" data-listing-file-modified-sort="1696859239339" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="10" data-listing-title-sort="Semantic technologies in practice: Designing, building and exploiting knowledge graphs at _Ontotext_" data-listing-filename-sort="Slides.md">
+<td>
+<a href="./markdown/20181031-SemanticTechnologiesAtOnto-UniYork/Slides.html" class="title listing-title">Semantic technologies in practice: Designing, building and exploiting knowledge graphs at <em>Ontotext</em></a>
+</td>
+<td>
+<span class="listing-author">Nikola Tulechki</span>
+</td>
+<td>
+<span class="listing-date">Oct 31, 2018</span>
+</td>
+<td>
+<span class="listing-reading-time">10 min</span>
+</td>
+</tr>
+<tr data-index="17" data-listing-date-sort="1694995200000" data-listing-file-modified-sort="1696859239419" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-title-sort="Various features" data-listing-filename-sort="presentation2.qmd">
+<td>
+<a href="./markdown/20230921/presentation2.html" class="title listing-title">Various features</a>
+</td>
+<td>
+<span class="listing-author"></span>
+</td>
+<td>
+<span class="listing-date">Sep 18, 2023</span>
+</td>
+<td>
+<span class="listing-reading-time">1 min</span>
+</td>
+</tr>
+</tbody>
+
+</table>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+<nav id="all-presentations-pagination" class="listing-pagination" aria-label="Page Navigation">
+  <ul class="pagination"></ul>
+</nav>
+</div>
+
 
 
 
