@@ -2,4 +2,8 @@
 title: "About"
 ---
 
-About message
+Welcome to Ontotext&trade; presentations! 
+This site contains the updatable index of public presentations Ontotext employees gave in frame of various research projects, tutorial sessions at conferences, internal trainings. 
+The slides are prepared with the help of [Quarto publishing system](https://quarto.org) enriched with [RevealJS presentation framework](https://revealjs.com/).
+
+&copy; Ontotext AD, 2023. All rights reserved.

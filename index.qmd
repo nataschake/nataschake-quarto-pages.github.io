@@ -1,6 +1,18 @@
 ---
-title: "mve"
+title: "List of presentations"
+listing:
+  id: all-presentations 
+  contents: 
+    - "markdown/*/presentation*.*md"
+    - "markdown/*/Slides.*md"
+    - "markdown/*/*/presentation*.*md"
+    - "markdown/*/*/Slides.*md"
+    - "markdown/*/*/*/presentation*.*md"
+    - "markdown/*/*/*/Slides.*md"
+  type: table
+  fields: [title, author, date, reading-time]
+  page-size: 6
 ---
 
-This is a list of presentations
-
+:::{#all-presentations}
+:::

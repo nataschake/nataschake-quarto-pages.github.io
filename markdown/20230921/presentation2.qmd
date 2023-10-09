@@ -2,7 +2,8 @@
 title: "Various features"
 date: 18-Sep-2023
 footer: "Quarto hints"
-format: revealjs
+format:
+  revealjs
 metadata-files:
   - ../_metadata.yml
 ---

@@ -1,0 +1,208 @@
+---
+author: "Vladimir Alexiev, PhD, PMP"
+title: "Ontotext CH/DH Projects"
+subtitle: "(A lot more details in [LOD for CH webinar](http://vladimiralexiev.github.io/pres/20160929-webinar/), 2016-09, 130 slides)"
+date: "2018-06-13"
+footer: "CLADA-BG Meeting, Sofia"
+format: revealjs
+metadata-files:
+- ../_metadata.yml
+---
+
+## [About Ontotext](http://ontotext.com)
+
+
+* Founded 2000, part of [Sirma Group](https://sirma.com/) (400 people, [BSE:SKK](http://www.bse-sofia.bg/?page=QuotesInfo&type=S&code=SKK&compnum=350), part of SOFIX), venture funding 2008
+* 65 people: 7 PhD, 30 MS, 20 BS, 6 university lecturers. Offices in Sofia, Varna, London
+* Core part of [Sirma Strategy 2022](https://2022.sirma.com/en/) with focus on cognitive computing
+* Working on: semantic technologies, semantic repositories, semantic text analysis, machine learning
+* Semantic Graph Database: [Ontotext GraphDB](http://graphdb.ontotext.com)
+* Semantic data integration and building of Knowledge Graphs
+* Semantic text analysis: entity, concept, relation extraction, document classification
+* Recommendations, sentiment analysis
+* Machine learning: entity disambiguation, deep learning in graphs, etc
+
+## [Research Projects](https://ontotext.com/knowledge-hub/research-projects/)
+
+::::{.columns}
+::: {.column width="30%"}
+![](./img/AAC-mapping.png){width=150%}
+:::
+::: {.column width="70%"}
+a HTML presentation framework
+
+  - animated slides, LaTex support, speaker notes, etc.
+:::
+::::
+
+## [Research Projects](https://ontotext.com/knowledge-hub/research-projects/)
+
+:::: {.columns}
+::: {.column width="30%"}
+
+<img src="img/Ontotext-FP-projects-timeline.png" style="width: 40%">
+&nbsp;
+:::
+::: {.column width="70%"}
+Current Projects:
+* EHRI2: European Holocaust Research Infrastructure (H2020 RI): **CH**
+* Evala: Congnitive and Semantic Links Analysis and Media Evaluation Platform (EuroStars)
+* euBusinessGraph: Innovative Data Products and Services for Company Data (H2020 BigData Experimentation)
+* COMPACT: From Research Through Policy on Social Media and Convergence (H2020 CSA)
+* BigDataGrapes: BigData to Enable Global Disruption of the Grapevine-Powered Industries (H2020 BigData Research)
+* CIMA: Company Intelligent Matching and Linking (BG OPC ISIS)
+:::
+::::
+
+## Research and Innovation Awards
+Arguably, Ontotext is the most innovative Bulgarian software company.
+
+* [Innovative Enterprise of the Year 2017](https://ontotext.com/company/news/innovative-enterprise-award-2017/)
+* [EU Innovation Radar Prize 2016 nomination](https://ontotext.com/company/news/innovation-radar-prize-2016/)
+* [BAIT Business Innovation Award 2014](https://ontotext.com/company/news/ontotext-receives-business-innovation-award-bait/)
+* [Innovative Enterprise of the Year 2014](https://ontotext.com/company/news/ontotext-receives-innovative-enterprise-year-2014-award/)
+* [Washington Post "Destination Innovation" Competition 2014 Award](https://ontotext.com/company/news/ontotext-lmis-openpolicy-wins-destination-innovation-competition/)
+* [Pythagoras Award 2010](http://computerworld.bg/28883_ontotekst_poluchi_nagrada_pitagor) for most successful company in EU FP6 projects
+
+We have more EU research projects than some universities combined
+
+
+## Industries and Clients
+80% of our sales are in the UK and US 
+
+* Media: BBC, UK Press Association, NL Press Association (NDP)...
+* Financial Info: S&P Global Platts, Euromoney, Financial Times, Nikkei...
+* STEM Publishing: IET, Oxford University Press, Wiley, Elsevier, Springer Nature...
+* Life Science: AstraZeneca, Novartis...
+* Government: UK Parliament, The National Archives, Natural Resources Canada...
+* Cultural Heritage and Digital Humanities (see next)
+
+## CH/DH Projects
+* ResearchSpace: British Museum, Yale Center for British Art. Largest museum collection, CIDOC CRM, semantic search...
+* (with Sirma Enterprise) [ConservationSpace](http://conspace.wixsite.com/conservationspace), [Sirma MuseumSpace](https://museumspace.com/)
+* [Medieval Cultures and Technological Resources](http://www.cost.eu/COST_Actions/isch/IS1005) (VCMS) COST action
+* Europeana: [Creative](https://pro.europeana.eu/project/europeana-creative-project), [Food and Drink](https://foodanddrinkeurope.eu/) ([sem app](http://efd.ontotext.com/app)), [OAI PMH](http://oai.europeana.eu/oaicat/index.shtml), [SPARQL](https://pro.europeana.eu/resources/apis/sparql), [members council](https://pro.europeana.eu/post/meet-the-members-council-vladimir-alexiev), 5 work groups, [Data Quality Committee](https://pro.europeana.eu/project/data-quality-committee)
+* [Bulgariana](http://bulgariana.eu) national aggegator: initiator
+* [Getty Research Institute: vocabularies LOD](http://vocab.getty.edu) and helping on Getty Museum LOD 
+* [Carnegie Hall LOD](https://github.com/CarnegieHall/linked-data)
+* [American Art Collaborative](http://americanartcollaborative.org/) consulting: 14 US museums integrating data using CIDOC CRM
+* [European Holocaust Research Infrastructure](https://ehri-project.eu): semantic archive integration. 4+4 years, heading towards ERIC
+* [Canadian Heritage Information Network](https://www.canada.ca/en/heritage-information-network.html) consulting (national aggregator moving to LOD)
+* Wikidata: frequent contributions (authority control)
+* DBpedia: contributions, association member, data quality and ontology committee
+* CLADA BG: key participant in both CLARIN (NLP) and DARIAH (CH/DH)
+
+## Knowledge Graphs
+
+| Knowledge Graph        | Year     | M obj | B triples |
+|------------------------|:--------:|:-----:|:---------:|
+| British Museum         | 2013     | 2     | 0.92      |
+| Polish Digital Library | 2013     | 3.1   | 0.53      |
+| Europeana              | 2014     | 20.3  | 3.8       |
+| FactForge              | 2006-now | ~14   | 3.2       |
+| LinkedLifeData         | 2008-now | ~12   | 10.2      |
+| Company Graph          | 2017-now | 6     | 3         |
+| Dun & Bradstreet       | 2017     | 210   | 30        |
+
+Details about the first 5 are in V.Alexiev et al, [Large-scale Reasoning with a Complex Cultural Heritage Ontology (CIDOC CRM)](http://vladimiralexiev.github.io/pubs/Alexiev2013-CRM-reasoning-slides.ppt), Workshop Practical Experiences with CIDOC CRM and its Extensions (CRMEX), TPDL 2013, slide 17
+
+## [ResearchSpace](http://confluence.ontotext.com/display/ResearchSpace/)
+* Semantic integration based on CIDOC CRM, search (first implementation of Fundamental Relations search), data & image annotation, data basket, etc
+
+![](img/RS-search-Rembrandt.png){height=530px}
+
+## [ConservationSpace](http://conspace.wixsite.com/conservationspace)
+* Line-of-business application for conservation specialists. International consortium (US NGA, DK SMK, UK Courtauld etc). Based on the [Sirma Enterprise Platform](https://www.sirmaenterprise.com/) and [Ontotext GraphDB](http://graphdb.ontotext.com), Ontotext helped with the ontologies.
+
+![](img/ConservationSpace.png){height=530px}
+
+## [MuseumSpace](https://museumspace.com/)
+* Based on the Sirma Enterprise Platform and ConservationSpace experience. Collections, exhibitions, curation...
+
+![](img/MuseumSpace-website.png){height=530px}
+
+## Virtual Center for Medieval Studies
+* [Medieval Cultures and Technological Resources](http://www.cost.eu/COST_Actions/isch/IS1005) (VCMS) COST action. FET proposals for medieval lexicography, historic research, Virtual Research Environments
+
+![](img/20131013-VCMS Project Design-illustrations.png){height=510px}
+
+## [Europeana Creative](https://pro.europeana.eu/project/europeana-creative-project)
+[OAI PMH](http://oai.europeana.eu/oaicat/index.shtml), and [SPARQL](https://pro.europeana.eu/resources/apis/sparql) servers for Europeana (part of Europeana Labs). 
+
+![](img/O is for Open (CultJam 201507).png){height=530px}
+
+## [Europeana Food and Drink](https://foodanddrinkeurope.eu/)
+* [sem app](http://efd.ontotext.com/app): enrichment (EN, FR, manual BG), hierarchical semantic facets, contributed BG recipes
+
+![](img/EFD-Beer-Pancake.png){height=530px}
+
+## Europeana
+* [Members council](https://pro.europeana.eu/post/meet-the-members-council-vladimir-alexiev), 5 task forces (e.g. below: working on FRBRoo-EDM profile), [Data Quality Committee](https://pro.europeana.eu/project/data-quality-committee)
+
+![](img/bima0000007198.png){height=530px}
+
+## [Bulgariana](http://bulgariana.eu)
+* National aggegator: initiator
+
+![](img/Bulgariana-Thracian.png){height=530px}
+
+## [Getty Research Institute: Vocabularies LOD](http://vocab.getty.edu)
+* Complete services: GraphDB, ontology design, mapping, documentation, support... Helping on Getty Museum LOD 
+
+![](img/GVP-sample-queries.png){height=530px}
+
+## [Carnegie Hall LOD](https://github.com/CarnegieHall/linked-data)
+
+![](img/CarnegieHall_LOD_DataModel.png){height=530px}
+
+## [American Art Collaborative](http://americanartcollaborative.org/) 
+Consulting: 14 US museums integrating data using CIDOC CRM.  [Mapping Review app](http://review.americanartcollaborative.org/)
+
+![](img/AAC-mapping.png){height=530px}
+
+## [European Holocaust Research Infrastructure](https://ehri-project.eu)
+* Semantic archive integration. 4+4 years, heading towards ERIC. EAD conversion
+
+![](img/EHRI-EAD-conversion.png){height=530px}
+
+## EHRI EAD Validation
+EAD validation, HTML preview and integrated error display; publishing/transport and ingest to Portal
+
+![](img/EHRI-EAD-validation.png)
+
+## EHRI Semantic Services
+* Geonames Coreferencing service (from EAD access points etc), EHRI Thesaurus (VocBench), [Person Deduplication](https://blog.ehri-project.eu/2018/05/29/person-records-linking-in-the-ushmm-survivors-and-victims-database/) (record linking)
+
+![](img/EHRI-Person-Records-Linking.jpg){height=510px}
+
+## EHRI Person networks
+
+![](img/EHRI-person-networks.png)
+
+## [EHRI Camps and Ghettos](https://blog.ehri-project.eu/2018/02/12/using-wikidata/)
+* Integrating Camps and Ghettos info between EHRI and Wikidata
+
+![](img/EHRI-WD-camps-ghettos.png){height=530px}
+
+## [Canadian Heritage Information Network](https://www.canada.ca/en/heritage-information-network.html) 
+* CA national aggregator is transitioning to LOD. 4 Consulting projects: environment scan, strategy, Artefacts Canada data analysis, national authorities
+
+![](img/CHIN-title-page.png){height=530px}
+
+## Wikidata Authority Control
+
+![](img/WD-MnM-AAT.png){height=530px}
+
+## Wikidata/DBpedia vs VIAF/GND; and Europeana
+[Name Data Sources for Semantic Enrichment](http://vladimiralexiev.github.io/CH-names/README.html) (Europeana Creative D2.4). 
+[Wikidata, a Target for Europeana's Semantic Strategy](http://www.slideshare.net/valexiev1/wikidata-a-target-for-europeanas-semantic-strategy-glamwiki-2015) (GlamWiki 2015)
+
+:::::::::::::: {.columns}
+::: {.column width="70%"}
+![](img/Cranach-corefs.jpg)
+:::
+::: {.column width="30%"}
+![](img/Cranach-venn.png)
+:::
+::::::::::::::
+
