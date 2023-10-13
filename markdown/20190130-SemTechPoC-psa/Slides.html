@@ -321,31 +321,13 @@
       margin-right: 0; 
     }
   </style>
-  <!-- basic highlighting -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
-  <link rel="stylesheet" href="../../css/onto-hljs.css">
-  <!--added for testing trySparql.js-->
-  <script src="../../js/trySparql.js"></script>
-  <!-- added for highlighting additional languages-->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
-  <!-- and it's easy to individually load additional languages -->
-  <!-- they'd simply add your language modules -->
-  <script src="../../js/ttl.js"></script>
-  <script src="../../js/sparql.js"></script>
-  <script src="../../js/pie.js"></script>
-  <script>hljs.registerLanguage('ttl', ttl_highlight);
-      hljs.registerLanguage('sparql', sparql_highlight);
-      hljs.registerLanguage('pie', pie_highlight);
-      hljs.initHighlightingOnLoad();
-      hljs.highlightAll();
-      //console.log(hljs.listLanguages());
-  </script>
+  <script src="https://presentations.ontotext.com/css/onto-style.html"></script>
 </head>
 <body class="quarto-light">
   <div class="reveal">
     <div class="slides">
 
-<section id="title-slide" data-background-image="../../resources/bkg-title.png" class="quarto-title-block center">
+<section id="title-slide" data-background-image="https://presentations.ontotext.com/resources/bkg-title.png" class="quarto-title-block center">
   <h1 class="title">How to Design a Successful SemTech PoC</h1>
 
 <div class="quarto-title-authors">
@@ -705,7 +687,7 @@ Alex Popov, Andrey Tagarev and Nikola Tulechki - Ontotext
 <h2><span class="header-section-number">10.3</span> Questions</h2>
 
 
-<img src="../../resources/quarto.png" class="slide-logo r-stretch"><div class="footer footer-default">
+<img src="https://presentations.ontotext.com/resources/ontotext.png" class="slide-logo r-stretch"><div class="footer footer-default">
 <p>@ Semantic PoC Training</p>
 </div>
 </section></section>
@@ -884,7 +866,7 @@ Alex Popov, Andrey Tagarev and Nikola Tulechki - Ontotext
         mobileViewDistance: 2,
 
        // Parallax background image
-       parallaxBackgroundImage: '../../resources/bkg1.png', // e.g. "'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'"
+       parallaxBackgroundImage: 'https://presentations.ontotext.com/resources/bkg1.png', // e.g. "'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'"
 
         // The "normal" size of the presentation, aspect ratio will be preserved
         // when the presentation is scaled to fit different resolutions. Can be
@@ -1069,23 +1051,7 @@ Alex Popov, Andrey Tagarev and Nikola Tulechki - Ontotext
       }
     });
     </script>
-    <script type="text/javascript">
-        Reveal.on('ready', event => {
-            if (event.indexh === 0) {
-                document.querySelector("div.has-logo > img.slide-logo").style.display = "none";
-            }
-        });
-        Reveal.addEventListener('slidechanged', (event) => {
-            if (event.indexh === 0) {
-                Reveal.configure({ slideNumber: null });
-                document.querySelector("div.has-logo > img.slide-logo").style.display = "none";
-            }
-            if (event.indexh === 1) {
-                Reveal.configure({ slideNumber: 'c' });
-                document.querySelector("div.has-logo > img.slide-logo").style.display = null;
-            }
-        });
-    </script>
+    <script src="https://presentations.ontotext.com/css/onto-title.html"></script>
     
 
 </body></html>
