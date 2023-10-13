@@ -3,13 +3,14 @@ format:
   revealjs: 
     incremental: false
     slide-number: c/t
+#scss theme file must be local
     theme: ../../css/ontotext.scss
-    logo: ../../resources/quarto.png
+    logo:  https://presentations.ontotext.com/resources/ontotext.png
     embed-resources: false
     margin: 0
     width: 1600
     height: 900
-    background-image: ../../resources/bkg1.png
+    background-image: https://presentations.ontotext.com/resources/bkg1.png
     background-size: cover
     background-opacity: 0.1
     transition: none
@@ -25,13 +26,19 @@ format:
 #auto-stretch: disallow stretching of images, as it does not work for big images within custom dvs (tables, columns)
     auto-stretch: true
     include-in-header:
-    - file: ../../css/onto-style.html
-    include-after-body: 
-    - file: ../../css/onto-title.html
+      text: |
+        <script src="https://presentations.ontotext.com/css/onto-style.html"></script>
+# two rows above are written following the discussion at https://github.com/quarto-dev/quarto-cli/discussions/6854
+#    - file: "https://presentations.ontotext.com/css/onto-style.html"
+    include-after-body:
+      text: |
+        <script src="https://presentations.ontotext.com/css/onto-title.html"></script>
+# two rows above are written following the discussion at https://github.com/quarto-dev/quarto-cli/discussions/6854
+#    - file: "https://presentations.ontotext.com/css/onto-title.html"
     menu:
       side: left
     title-slide-attributes:
-        data-background-image: ../../resources/bkg-title.png
+        data-background-image: https://presentations.ontotext.com/resources/bkg-title.png
 #use reveal-header extension if you need both header and footer on slides. They are declared in the presentation.qmd file
 #filters:
 #  - reveal-header

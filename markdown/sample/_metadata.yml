@@ -4,7 +4,7 @@ format:
     incremental: false
     slide-number: c/t
     theme: ../../css/ontotext.scss
-    logo: ../../resources/quarto.png
+    logo: ../../resources/ontotext.png
     embed-resources: false
     margin: 0
     width: 1600
