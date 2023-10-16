@@ -9,7 +9,7 @@ format:
     margin: 0
     width: 1600
     height: 900
-    background-image: ../../resources/bkg-blue.png
+    background-image: ../../resources/bkg-blue.jpg
     background-size: cover
     background-opacity: 0.1
     transition: none
