@@ -4,7 +4,7 @@ project:
 website:
   title: "Technical presentations"
   navbar:
-    logo: resources/quarto.png
+    logo: https://presentations.ontotext.com/resources/ontotext.png
     left:
       - href: index.qmd
         text: Home
