@@ -42,4 +42,3 @@ format:
 #use reveal-header extension if you need both header and footer on slides. They are declared in the presentation.qmd file
 #filters:
 #  - reveal-header
-    
