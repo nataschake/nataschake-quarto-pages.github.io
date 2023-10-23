@@ -1,83 +1,79 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://github.com/nataschake/quarto-pages/about.html</loc>
-    <lastmod>2023-10-17T09:32:59.368Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/nataschake/quarto-pages/markdown/20190311-LDLifeCycle/Slides.html</loc>
-    <lastmod>2023-10-17T09:32:57.228Z</lastmod>
-  </url>
-  <url>
     <loc>https://github.com/nataschake/quarto-pages/markdown/20180601-TimeMachine-ONTO-CH/Slides.html</loc>
-    <lastmod>2023-10-17T09:32:55.032Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/nataschake/quarto-pages/markdown/20180815-SemTechPoc-webinar/Slides.html</loc>
-    <lastmod>2023-10-17T09:32:53.492Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/nataschake/quarto-pages/markdown/20181031-SemanticTechnologiesAtOnto-UniYork/Slides.html</loc>
-    <lastmod>2023-10-17T09:32:52.344Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/nataschake/quarto-pages/markdown/20180613-CLADA-ONTO-CH/Slides.html</loc>
-    <lastmod>2023-10-17T09:32:50.376Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/nataschake/quarto-pages/markdown/20180718-BDG-WP3/Slides.html</loc>
-    <lastmod>2023-10-17T09:32:48.200Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/nataschake/quarto-pages/markdown/20180529-GitLab-MergeRequests/Slides.html</loc>
-    <lastmod>2023-10-17T09:32:45.264Z</lastmod>
+    <lastmod>2023-10-23T10:37:37.723Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/nataschake/quarto-pages/markdown/sample/presentation.html</loc>
-    <lastmod>2023-10-17T09:32:43.924Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/nataschake/quarto-pages/markdown/20230922/presentation.html</loc>
-    <lastmod>2023-10-17T09:32:41.412Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/nataschake/quarto-pages/markdown/20180911-SemTechPoC-semantics/Slides.html</loc>
-    <lastmod>2023-10-17T09:32:38.968Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/nataschake/quarto-pages/markdown/20180607-Training-OTTrainingImpact/Slides.html</loc>
-    <lastmod>2023-10-17T09:32:42.596Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/nataschake/quarto-pages/markdown/20230921/presentation2.html</loc>
-    <lastmod>2023-10-17T09:32:44.600Z</lastmod>
+    <lastmod>2023-10-23T10:37:36.175Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/nataschake/quarto-pages/markdown/20180927-SemTechPoC-training/Slides.html</loc>
-    <lastmod>2023-10-17T09:32:46.204Z</lastmod>
+    <lastmod>2023-10-23T10:37:34.259Z</lastmod>
   </url>
   <url>
-    <loc>https://github.com/nataschake/quarto-pages/markdown/20190909-SemTechPoC-CLEOPATRA/Slides.html</loc>
-    <lastmod>2023-10-17T09:32:49.500Z</lastmod>
+    <loc>https://github.com/nataschake/quarto-pages/markdown/20180815-SemTechPoc-webinar/Slides.html</loc>
+    <lastmod>2023-10-23T10:37:33.135Z</lastmod>
   </url>
   <url>
-    <loc>https://github.com/nataschake/quarto-pages/markdown/20180920-Datathon/Slides.html</loc>
-    <lastmod>2023-10-17T09:32:50.992Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/nataschake/quarto-pages/markdown/20230919/presentation.html</loc>
-    <lastmod>2023-10-17T09:32:52.792Z</lastmod>
+    <loc>https://github.com/nataschake/quarto-pages/markdown/20230921/presentation2.html</loc>
+    <lastmod>2023-10-23T10:37:32.199Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/nataschake/quarto-pages/markdown/20181214-BankOfAmerica-LunchAndShare/Slides.html</loc>
-    <lastmod>2023-10-17T09:32:54.232Z</lastmod>
+    <lastmod>2023-10-23T10:37:31.375Z</lastmod>
   </url>
   <url>
-    <loc>https://github.com/nataschake/quarto-pages/markdown/20190130-SemTechPoC-psa/Slides.html</loc>
-    <lastmod>2023-10-17T09:32:55.768Z</lastmod>
+    <loc>https://github.com/nataschake/quarto-pages/markdown/20180718-BDG-WP3/Slides.html</loc>
+    <lastmod>2023-10-23T10:37:30.047Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/nataschake/quarto-pages/markdown/20180613-CLADA-ONTO-CH/Slides.html</loc>
+    <lastmod>2023-10-23T10:37:27.999Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/nataschake/quarto-pages/markdown/20180911-SemTechPoC-semantics/Slides.html</loc>
+    <lastmod>2023-10-23T10:37:26.415Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/nataschake/quarto-pages/about.html</loc>
+    <lastmod>2023-10-23T10:37:23.199Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/nataschake/quarto-pages/index.html</loc>
-    <lastmod>2023-10-17T09:32:58.880Z</lastmod>
+    <lastmod>2023-10-23T10:37:24.355Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/nataschake/quarto-pages/markdown/20190909-SemTechPoC-CLEOPATRA/Slides.html</loc>
+    <lastmod>2023-10-23T10:37:27.379Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/nataschake/quarto-pages/markdown/20190130-SemTechPoC-psa/Slides.html</loc>
+    <lastmod>2023-10-23T10:37:28.599Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/nataschake/quarto-pages/markdown/20180607-Training-OTTrainingImpact/Slides.html</loc>
+    <lastmod>2023-10-23T10:37:30.803Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/nataschake/quarto-pages/markdown/20230919/presentation.html</loc>
+    <lastmod>2023-10-23T10:37:31.687Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/nataschake/quarto-pages/markdown/20180920-Datathon/Slides.html</loc>
+    <lastmod>2023-10-23T10:37:32.619Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/nataschake/quarto-pages/markdown/20180529-GitLab-MergeRequests/Slides.html</loc>
+    <lastmod>2023-10-23T10:37:33.595Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/nataschake/quarto-pages/markdown/20181031-SemanticTechnologiesAtOnto-UniYork/Slides.html</loc>
+    <lastmod>2023-10-23T10:37:35.183Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/nataschake/quarto-pages/markdown/20190311-LDLifeCycle/Slides.html</loc>
+    <lastmod>2023-10-23T10:37:37.199Z</lastmod>
   </url>
 </urlset>
